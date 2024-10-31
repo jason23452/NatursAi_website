@@ -7,16 +7,13 @@ git remote add origin https://github.com/jason23452/NatursAi_website.git
 git push -u origin main
 
 
+
 #維護版本
+
 git pull origin main
 
-git add .
+git add 
 
+git commit -m "0.0.1"
 
-git remote add origin https://github.com/jason23452/NatursAi_website.git
-
-git branch -M main
-
-git commit -m "描述本次更新的內容"
-
-git push -u origin main
+git push origin main
