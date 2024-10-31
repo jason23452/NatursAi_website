@@ -10,7 +10,6 @@ git push -u origin main
 
 #維護版本
 
-git pull origin main
 
 git add 
 
