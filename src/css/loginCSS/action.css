@@ -1,0 +1,13 @@
+.fade-out {
+    opacity: 0;
+    visibility: hidden; /* Hides the element visually when fading out */
+    transition: opacity 0.75s ease-out, visibility 0.75s ease-out;
+    pointer-events: none; /* Disable interactions */
+}
+
+.fade-in {
+    opacity: 1;
+    visibility: visible; /* Makes the element visible when fading in */
+    transition: opacity 0.75s ease-in, visibility 0.75s ease-in;
+    pointer-events: auto; /* Enables interactions */
+}
