@@ -7,6 +7,7 @@ module.exports = {
         inter: ['Inter', 'sans-serif'],
         Noto_Sans_en : ['Noto Sans', 'sans-serif'],
         Noto_Sans_ch : ['Noto Sans TC', 'sans-serif'],
+        Baloo_Thambi : ['Baloo Thambi', 'sans-serif'],
       },
     },
   },

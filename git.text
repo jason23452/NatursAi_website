@@ -11,7 +11,7 @@ git push -u origin main
 #維護版本
 
 
-git add 
+git add .
 
 git commit -m "0.0.1"
 
