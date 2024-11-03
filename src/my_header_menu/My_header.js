@@ -68,7 +68,7 @@ function My_header() {
                     <div className=' h-[2.85vh] border-[0.052vw] border-[#c3c3c3]  '></div>
                     <HoverImage className='w-[1.25vw] h-[2.63vh]' defaultSrc={chat_alt} hoverSrc={chat_alt_green} />
                     <HoverImage className='w-[1.25vw] h-[2.63vh]' defaultSrc={bell} hoverSrc={bell_green} />
-                    <Link to='/setting'> <img className='w-[2.08vw] h-[4.39vh] rounded-full  hover:scale-110 transition-transform duration-200' src={user_circle} />  </Link>
+                    <Link to='/profile'> <img className='w-[2.08vw] h-[4.39vh] rounded-full  hover:scale-110 transition-transform duration-200' src={user_circle} />  </Link>
                 </div>
             </div>
 

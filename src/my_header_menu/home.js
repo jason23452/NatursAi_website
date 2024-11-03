@@ -44,14 +44,12 @@ function Home() {
                 {/* <img src={test} className=' absolute top-0 opacity-60' /> */}
                 <div className='  absolute inset-0 '>
                     <div className='w-[88.594vw] h-[74.314vh] ml-[9.271vw] mt-[27.881vh] flex justify-between'>
-
                         <div className='w-[33.125vw] h-[38.529vh] flex flex-col'>
                             <span className="w-[21.354vw] h-[12.953vh] text-[#538aa2] text-[1.667vw] font-normal font-Baloo_Thambi leading-[6.2vh] tracking-[0.250vw]">Naturs
                                 <span className='text-[#399983] text-[1.667vw] font-normal font-Baloo_Thambi leading-[6vh] tracking-[0.250vw]'>ai <br />
                                     <span className="text-[#538aa2] text-[1.667vw] font-bold font-Noto_Sans_ch leading-[6.vh] tracking-[0.250vw]">劃時代的AI健康管理</span>
                                 </span>
                             </span>
-
                             <span className='w-[33.125vw] h-[17.563vh] mt-[1.098vh] text-[#3F3F46] text-[1.042vw] font-normal font-Noto_Sans_ch leading-[2.649vh] tracking-[0.156vw]'><br />我們著重於打造真實虛實體驗，將現實生活中的健康管理透過與各健康專案、遊戲、活動結合形成虛實整合的強大工作，讓人從小事情開始關注健康議題，比較枯燥乏味的健康管理，立即加入
                                 <span className="text-[#538aa2] text-[1.042vw] font-normal font-Baloo_Thambi leading-[2.649vh] tracking-[0.156vw]">Naturs
                                     <span className="text-[#399983] text-[1.042vw] font-normal font-Baloo_Thambi leading-[2.649vh] tracking-[0.156vw]">ai
@@ -133,7 +131,6 @@ function Home() {
                                 <span className='text-[#538AA2] text-[0.573vw] font-Noto_Sans_ch font-normal leading-[1.457vh] tracking-[0.086vw]'><span className='underline decoration-[0.052vw]'>隱私政策</span>
                                     <span className='text-[#538AA2] text-[0.573vw] font-Noto_Sans_ch font-normal leading-[1.457vh] tracking-[0.086vw]'>》
                                         <span className='text-[#3F3F46] text-[0.573vw] font-Noto_Sans_ch font-normal leading-[1.457vh] tracking-[0.086vw]'><br/><br/>點擊下方的「訂閱」按鈕，即表示您同意允許 <span className=' font-Noto_Sans_en'>NatursAi</span> 存儲並處理您提交的個人信息，以便為您提供所需的內容。
-
                                         </span>
                                     </span>
                                 </span>
@@ -141,13 +138,6 @@ function Home() {
                         </span>
                     </div>
                 </div>
-
-                {/* <span style="color: '#3F3F46', fontSize: 11, fontFamily: 'Inter', fontWeight: '400', lineHeight: 13.27, letterSpacing: 1.65, wordWrap: 'break-word'">您可以隨時取消訂閱這些通訊。欲了解如何取消訂閱、我們的隱私實踐以及我們如何承諾保護和尊重您的隱私，請參閱我們的</span>
-                <span style="color: '#538AA2', fontSize: 11, fontFamily: 'Inter', fontWeight: '400', lineHeight: 13.27, letterSpacing: 1.65, wordWrap: 'break-word'">《</span>
-                <span style="color: '#538AA2', fontSize: 11, fontFamily: 'Inter', fontWeight: '400', textDecoration: 'underline', lineHeight: 13.27, letterSpacing: 1.65, wordWrap: 'break-word'">隱私政策</span>
-                <span style="color: '#538AA2', fontSize: 11, fontFamily: 'Inter', fontWeight: '400', lineHeight: 13.27, letterSpacing: 1.65, wordWrap: 'break-word'">》</span>
-                <span style="color: '#3F3F46', fontSize: 11, fontFamily: 'Inter', fontWeight: '400', lineHeight: 13.27, letterSpacing: 1.65, wordWrap: 'break-word'">。<br/><br/>點擊下方的「訂閱」按鈕，即表示您同意允許 NatursAi 存儲並處理您提交的個人信息，以便為您提供所需的內容。</span> */}
-
             </div>
 
         </div>

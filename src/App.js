@@ -10,7 +10,7 @@ import Login from './my_header_menu/login';
 
 
 import Product from './my_header_menu/product';
-import Setting from './my_header_menu/setting';
+import Profile from './my_header_menu/profile';
 
 
 
@@ -29,10 +29,8 @@ function App() {
         <Route path="/Information" element={<Information />} />  {/* Route to Information page */}
 
         <Route path="/login" element={<Login />} />  {/* Route to Information page */}
-        <Route path="/setting" element={<Setting />} />  {/* Route to Information page */}
+        <Route path="/profile" element={<Profile />} />  {/* Route to Information page */}
         
-
-     
       </Routes>
       
     </Router>
