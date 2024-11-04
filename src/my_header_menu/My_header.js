@@ -48,7 +48,7 @@ function My_header() {
                 <div className=' h-[2.85vh] border-[0.052vw] border-[#c3c3c3]  '></div>
                 <Link to='/' className='w-[3.12vw]  text-[#3F3F46] text-center font-Noto_Sans_ch font-medium text-[1.04vw]    leading-none tracking-[0.10vw]  hover:text-[#538AA2]'>首頁</Link>
                 <Link to='/product' className='w-[3.12vw] text-[#3F3F46] text-center font-Noto_Sans_ch font-medium text-[1.04vw]    leading-none tracking-[0.10vw] hover:text-[#538AA2]'>產品</Link>
-                <Link to='/Analysis'  className='w-[5.2vw] text-[#3F3F46] text-center font-Noto_Sans_ch font-medium text-[1.04vw]    leading-none tracking-[0.10vw] hover:text-[#538AA2]'>飲食規劃</Link>
+                <Link to='/Meal_planning'  className='w-[5.2vw] text-[#3F3F46] text-center font-Noto_Sans_ch font-medium text-[1.04vw]    leading-none tracking-[0.10vw] hover:text-[#538AA2]'>飲食規劃</Link>
                 <Link to='/about' className='w-[5.2vw] text-[#3F3F46] text-center font-Noto_Sans_ch font-medium text-[1.04vw]    leading-none tracking-[0.10vw] hover:text-[#538AA2]'>聯絡我們</Link>
                 <Link to='/Information' className='w-[3.12vw] text-[#3F3F46] text-center font-Noto_Sans_ch font-medium text-[1.04vw]    leading-none tracking-[0.10vw] hover:text-[#538AA2]'>新聞</Link>
             </div>

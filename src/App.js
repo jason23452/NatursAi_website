@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MyHeader from './my_header_menu/My_header'; // Renamed to PascalCase
 
 import Home from './my_header_menu/home'; // Renamed to PascalCase
-import Analysis from './my_header_menu/Analysis';
+import Meal_planning from './my_header_menu/Meal_planning';
 import About from './my_header_menu/about'; // Renamed to PascalCase
 import Information from './my_header_menu/Information';
 import Login from './my_header_menu/login';
@@ -24,7 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />  {/* Route to Home page */}
         <Route path="/product" element={<Product />} />  {/* Route to Home page */}
-        <Route path="/Analysis" element={<Analysis />} />  {/* Route to Analysis page */}
+        <Route path="/Meal_planning" element={<Meal_planning />} />  {/* Route to Analysis page */}
         <Route path="/about" element={<About />} />  {/* Route to About page */}
         <Route path="/Information" element={<Information />} />  {/* Route to Information page */}
 
