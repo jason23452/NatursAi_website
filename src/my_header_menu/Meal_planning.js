@@ -28,7 +28,6 @@ function Meal_planning() {
 
 
             </div>
-
         </div>
     );
 }
