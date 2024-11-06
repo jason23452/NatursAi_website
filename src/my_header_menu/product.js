@@ -31,6 +31,7 @@ import video1 from '../assets/product_img/宋冬野   10 連衣裙.mp4';
 import video2 from '../assets/product_img/『MV』毛不易Mao Buyi - 借 官方高畫質 Official HD MV.mp4';
 import video3 from '../assets/product_img/不染.mp4';
 import video4 from '../assets/product_img/郭源潮.mp4';
+import Footer from './footer';
 
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -173,7 +174,7 @@ function Product() {
             </div>
 
             {/* Content */}
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 ">
                 <div className="ml-[10.573vw] mt-[15.477vh] w-[68.854vw] h-[52.779vh] flex">
                     <div className="w-[33.125vw] h-[39.297vh] flex flex-col">
                         <img src={Goeat_logo} className="w-[5.833vw] h-[7.245vh]" />
@@ -308,13 +309,12 @@ function Product() {
                             <button className='w-[13.490vw] h-[9.001vh]'><img src={download_apple} /></button>
                         </div>
                     </div>
-
                 </div>
-
-
-
-
+                <div className='mt-[9.440vh]'></div>
+                <Footer/>
             </div>
+           
+
         </div>
     );
 }

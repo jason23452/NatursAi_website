@@ -7,8 +7,9 @@ import GoEat from '../assets/home_img/GoEat.svg';
 import deep_understand from '../assets/home_img/deep_understand.svg';
 import deep_understand_green from '../assets/home_img/deep_understand_green.svg';
 
-
 import React, { useState } from 'react';
+import Footer from './footer';
+import { Link } from 'react-router-dom';
 
 
 
@@ -59,15 +60,15 @@ function Home() {
                             </span>
 
                             <button className='mt-[0.768vh] w-[11.667vw] h-[6.147vh] bg-gradient-to-r from-[#399983] to-[#538aa2] flex justify-center items-center hover:from-[#3F3F46] hover:to-[#3F3F46]'>
-                                <span className='text-center text-white text-[2.634vh] font-medium font-Noto_Sans_ch leading-[1.508vw] '>深入了解</span>
+                                <Link to='/product' className='text-center text-white text-[2.634vh] font-medium font-Noto_Sans_ch leading-[1.508vw] '>深入了解</Link>
                             </button>
                         </div>
                         <div className='mr-[0.8vw] mt-auto w-[11.667vw] h-[37.980vh] flex flex-col justify-between'>
                             <button className='w-full h-[6.147vh] bg-gradient-to-r from-[#399983] to-[#538aa2] flex justify-center items-center hover:from-[#3F3F46] hover:to-[#3F3F46]'>
-                                <span className='text-center text-white text-[2.634vh] font-medium font-Noto_Sans_ch leading-[1.508vw]'>新聞動態</span>
+                                <Link to='/Information' className='text-center text-white text-[2.634vh] font-medium font-Noto_Sans_ch leading-[1.508vw]'>新聞動態</Link>
                             </button>
                             <button className='w-full h-[6.147vh] bg-gradient-to-r from-[#399983] to-[#538aa2] flex justify-center items-center hover:from-[#3F3F46] hover:to-[#3F3F46]'>
-                                <span className='text-center text-white text-[2.634vh] font-medium font-Noto_Sans_ch leading-[1.508vw]'>健康管理APP</span>
+                                <Link to='/product' className='text-center text-white text-[2.634vh] font-medium font-Noto_Sans_ch leading-[1.508vw]'>健康管理APP</Link>
                             </button>
                         </div>
                     </div>
@@ -85,7 +86,7 @@ function Home() {
                                         <span className='mt-[1vh] text-[#3F3F46] text-[1.042vw] font-Noto_Sans_ch font-bold leading-[2.481vh]  tracking-[0.156vw] text-center'>團隊</span>
                                     </div>
 
-                                    <button className='w-[12.760vw] h-[4.987vh]'><HoverImage hoverSrc={Contact_us_green} defaultSrc={Contact_us} /></button>
+                                    <Link to='/about' className='w-[12.760vw] h-[4.987vh]'><HoverImage hoverSrc={Contact_us_green} defaultSrc={Contact_us} /></Link>
                                 </div>
                             </div>
                             <div className='flex w-[18.438vw]  h-[9.660vh] justify-between items-end '>
@@ -94,7 +95,7 @@ function Home() {
                                     <div className="w-[8.281vw] h-[4.830vh]  flex ">
                                         <span className='mt-[1vh] text-[#3F3F46] text-[1.042vw] font-Noto_Sans_ch font-bold leading-[2.481vh] tracking-[0.156vw]'>夠益營養APP</span>
                                     </div>
-                                    <button className='w-[12.760vw] h-[4.987vh]'><HoverImage hoverSrc={deep_understand_green} defaultSrc={deep_understand} /></button>
+                                    <Link to='/product' className='w-[12.760vw] h-[4.987vh]'><HoverImage hoverSrc={deep_understand_green} defaultSrc={deep_understand} /></Link>
                                 </div>
                             </div>
                         </div>
@@ -138,6 +139,7 @@ function Home() {
                         </span>
                     </div>
                 </div>
+                <Footer/>
             </div>
 
         </div>

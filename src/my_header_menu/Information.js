@@ -1,4 +1,5 @@
 import TaiwanNewsComponent from '../my_header_menu/NewsComponent';
+import Footer from './footer';
 
 function Information() {
     return (
@@ -8,6 +9,8 @@ function Information() {
                 <div className='ml-[16.354vw] mt-[5.435vh]  w-[62.414vw] h-[76.701vh] overflow-y-scroll overflow-x-hidden'>
                     <TaiwanNewsComponent />
                 </div>
+                <div className='mt-[9.370vh]'></div>
+                <Footer/>
             </div>
 
 
