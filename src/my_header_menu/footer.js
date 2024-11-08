@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Naturs_ai_black from '../assets/footer_img/Naturs_ai_black.svg';
 import Youtube from '../assets/footer_img/Youtube.svg';
 import Instagram from '../assets/footer_img/Instagram.svg';
@@ -7,9 +7,19 @@ import { Link } from 'react-router-dom';
 
 
 const Footer = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 1000); // 模擬載入延遲
+    return () => clearTimeout(timer);
+  }, []);
+
   
   return (
-    <footer className=" relative w-full  h-[24.5825vw] bg-[#3F3F46] flex flex-col  justify-center   items-center  z-10">
+    <footer
+      className={`relative w-full h-[24.5825vw] bg-[#3F3F46] flex flex-col justify-center items-center z-10 transition-opacity duration-500 ${
+        isLoading ? 'opacity-0' : 'opacity-100'
+      }`}
+    >
       <div className='w-[76.875vw] h-[15.2572vw] flex'>
         <div className='w-[21.146vw] h-[15.2572vw] flex flex-col justify-start items-start'>
          <Link to='/' ><img className='w-[10.208vw] h-[3.0721vw]'  src={Naturs_ai_black} onClick={() => window.scrollTo(0, 0)} /></Link> 
