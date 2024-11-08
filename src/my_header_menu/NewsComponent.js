@@ -35,13 +35,13 @@ const TaiwanHealthNewsComponent = () => {
     <div>
       <ul>
         {news.map((article, index) => (
-          <li key={index} className='w-[62.414vw] h-[35.572vh] flex  items-center space-x-[3.125vw]'>
+          <li key={index} className='w-[62.414vw] h-[16.877vw] flex  items-center space-x-[3.125vw]'>
             {article.image && (
-             <a href={article.url}><img src={article.image} className='w-[23.958vw] h-[28.430vh] ' /></a> 
+             <a href={article.url}><img src={article.image} className='w-[23.958vw] h-[13.489vw] ' /></a> 
             )}
-            <div className='flex flex-col w-[30.052vw] h-[31.614vh]'>
-              <span className='text-black text-[1.250vw] font-Noto_Sans_ch font-bold leading-[3.952vh] '>{article.title}<br/></span>
-              <span className='text-black text-[1.042vw] font-Noto_Sans_ch font-normal leading-[3.293vh] '><br/>{article.description || 'No description available'}</span>
+            <div className='flex flex-col w-[30.052vw] h-[15.000vw]'>
+              <span className='text-black text-[1.250vw] font-Noto_Sans_ch font-bold leading-[1.562vw] '>{article.title}<br/></span>
+              <span className='text-black text-[1.042vw] font-Noto_Sans_ch font-normal leading-[1.562vw] '><br/>{article.description || 'No description available'}</span>
             </div>
 
           </li>
