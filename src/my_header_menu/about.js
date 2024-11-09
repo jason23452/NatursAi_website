@@ -5,7 +5,8 @@ import title_img from '../assets/About_us_img/title_img.svg';
 import closedArrow from '../assets/About_us_img/arrow.svg';
 import openArrow from '../assets/About_us_img/openArrow.svg';
 import no_robot from '../assets/About_us_img/no_robot.svg';
-import Footer from './footer';
+import LazyImage from '../action_object/lazyimg';
+const Footer = React.lazy(() => import('./footer'));
 
 const CustomSelect = ({ options, name, value, onChange }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +30,7 @@ const CustomSelect = ({ options, name, value, onChange }) => {
                 ))}
             </select>
 
-            <img
+            <LazyImage
                 className="absolute right-[2.013vw] w-[1.927vw] h-[0.990vw] pointer-events-none"
                 src={isOpen ? openArrow : closedArrow}
                 alt="arrow"
@@ -71,7 +72,7 @@ function About() {
                 <img src={About_us_bg} className="w-full object-cover" alt="Login Background" />
                 <div className='absolute inset-0'>
                     <div className='ml-[38.229vw] mt-[10.729vw] relative w-[17.760vw] h-[6.615vw]'>
-                        <img className='w-[17.760vw] h-[5.469vw]' src={title_img} />
+                        <LazyImage className='w-[17.760vw] h-[5.469vw]' src={title_img} />
                         <span className='absolute left-[8.854vw] top-[4.167vw] w-[15.469vw] h-[2.292vw] flex justify-start items-center text-[#538AA2] text-[1.042vw] font-Noto_Sans_ch font-bold leading-[1.257vw] tracking-[0.156vw]'>
                             劃時代的AI健康管理
                         </span>
@@ -132,14 +133,16 @@ function About() {
                             ></textarea>
                         </div>
                         <div className='w-[44.062vw] h-[5.469vw] flex justify-between mt-[2.969vw]'>
-                            <img src={no_robot} className='w-[20.052vw] h-[5.469vw]' />
+                            <LazyImage src={no_robot} className='w-[20.052vw] h-[5.469vw]' />
                             <button type="submit" className='mt-[2.031vw] w-[11.667vw] h-[2.916vw] bg-gradient-to-r from-[#399983] to-[#538aa2] text-white text-[1.250vw] font-medium hover:from-[#3F3F46] hover:to-[#3F3F46]'>
                                 提交
                             </button>
                         </div>
                     </form>
                 </div>
-                <Footer />
+                <React.Suspense fallback={<div>Loading...</div>}>
+                    <Footer />
+                </React.Suspense>
             </div>
         </div>
     );

@@ -8,32 +8,22 @@ import deep_understand from '../assets/home_img/deep_understand.svg';
 import deep_understand_green from '../assets/home_img/deep_understand_green.svg';
 
 import React, { useState } from 'react';
-import Footer from './footer';
 import { Link } from 'react-router-dom';
+import HoverImage from '../action_object/HoverImage'
+import LazyImage from '../action_object/lazyimg';
+
+const Footer = React.lazy(() => import('./footer'));
 
 
 
 function Home() {
-
-    const HoverImage = ({ defaultSrc, hoverSrc, className }) => {
-        const [isHovered, setIsHovered] = useState(false);
-
-        return (
-            <img
-                className={className}
-                src={isHovered ? hoverSrc : defaultSrc}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-                alt="hoverable image"
-            />
-        );
-    };
     const [isChecked, setIsChecked] = useState(false);
-
     // 处理复选框点击事件
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);
     };
+
+
 
 
 
@@ -48,11 +38,11 @@ function Home() {
 
                         <div className='w-[33.125vw] h-[18.281vw] flex flex-col'>
                             <span className="w-[21.354vw] h-[6.146vw] text-[#538aa2] text-[1.667vw] font-normal font-Baloo_Thambi leading-[3.000vw] tracking-[0.250vw]">Naturs
-                                <span className='text-[#399983] text-[1.667vw] font-normal font-Baloo_Thambi leading-[3.000vw] tracking-[0.250vw]'>ai <br />    
+                                <span className='text-[#399983] text-[1.667vw] font-normal font-Baloo_Thambi leading-[3.000vw] tracking-[0.250vw]'>ai <br />
                                     <span className="text-[#538aa2] text-[1.667vw] font-bold font-Noto_Sans_ch leading-[3.000vw] tracking-[0.250vw]">劃時代的AI健康管理</span>
                                 </span>
                             </span>
-                            
+
                             <span className='w-[33.125vw] h-[8.333vw] mt-[0.521vw] text-[#3F3F46] text-[1.042vw] font-normal font-Noto_Sans_ch leading-[1.257vw] tracking-[0.156vw]'><br />我們著重於打造真實虛實體驗，將現實生活中的健康管理透過與各健康專案、遊戲、活動結合形成虛實整合的強大工作，讓人從小事情開始關注健康議題，比較枯燥乏味的健康管理，立即加入
                                 <span className="text-[#538aa2] text-[1.042vw] font-normal font-Baloo_Thambi leading-[1.257vw] tracking-[0.156vw]">Naturs
                                     <span className="text-[#399983] text-[1.042vw] font-normal font-Baloo_Thambi leading-[1.257vw] tracking-[0.156vw]">ai
@@ -82,18 +72,17 @@ function Home() {
 
                         <div className='flex w-[43.385vw] h-[4.583vw] mt-[10.106vw] ml-[15.4vw] justify-between'>
                             <div className='flex w-[18.438vw]  h-[4.583vw] justify-between items-end '>
-                                <img className='w-[4.583vw]' src={NatursAi} />
+                                <LazyImage className='w-[4.583vw] ' src={NatursAi} />
                                 <div className='flex flex-col justify-between w-[12.760vw]  h-full ml-[1.144vw]'>
                                     <div className='w-[8.281vw] h-[2.217vw] ml-[0.260vw] flex'>
                                         <span className="mt-[0.469vw] text-[#3F3F46] font-Baloo_Thambi font-normal text-[1.042vw] leading-[1.257vw] tracking-[0.156vw] ">Natursai&nbsp;</span>
                                         <span className='mt-[0.469vw] text-[#3F3F46] text-[1.042vw] font-Noto_Sans_ch font-bold leading-[1.177vw]  tracking-[0.156vw] text-center'>團隊</span>
                                     </div>
-
                                     <Link to='/about' className='w-[12.760vw] h-[2.395vw]'><HoverImage hoverSrc={Contact_us_green} defaultSrc={Contact_us} /></Link>
                                 </div>
                             </div>
                             <div className='flex w-[18.438vw]  h-[4.583vw] justify-between items-end '>
-                                <img className='w-[4.583vw]' src={GoEat} />
+                                <LazyImage className='w-[4.583vw]' src={GoEat} />
                                 <div className='flex flex-col justify-between w-[12.760vw]  h-full ml-[1.144vw]'>
                                     <div className="w-[8.281vw] h-[2.217vw]  flex ">
                                         <span className='mt-[0.469vw] text-[#3F3F46] text-[1.042vw] font-Noto_Sans_ch font-bold leading-[1.177vw] tracking-[0.156vw]'>夠益營養APP</span>
@@ -139,7 +128,7 @@ function Home() {
                             <span className='text-[#538AA2] text-[0.573vw] font-Noto_Sans_ch font-normal leading-[0.691vw] tracking-[0.086vw]'>《
                                 <span className='text-[#538AA2] text-[0.573vw] font-Noto_Sans_ch font-normal leading-[0.691vw] tracking-[0.086vw]'><span className='underline decoration-[0.052vw]'>隱私政策</span>
                                     <span className='text-[#538AA2] text-[0.573vw] font-Noto_Sans_ch font-normal leading-[0.691vw] tracking-[0.086vw]'>》
-                                        <span className='text-[#3F3F46] text-[0.573vw] font-Noto_Sans_ch font-normal leading-[0.691vw] tracking-[0.086vw]'><br/><br/>點擊下方的「訂閱」按鈕，即表示您同意允許 <span className=' font-Noto_Sans_en'>NatursAi</span> 存儲並處理您提交的個人信息，以便為您提供所需的內容。
+                                        <span className='text-[#3F3F46] text-[0.573vw] font-Noto_Sans_ch font-normal leading-[0.691vw] tracking-[0.086vw]'><br /><br />點擊下方的「訂閱」按鈕，即表示您同意允許 <span className=' font-Noto_Sans_en'>NatursAi</span> 存儲並處理您提交的個人信息，以便為您提供所需的內容。
                                         </span>
                                     </span>
                                 </span>
@@ -147,7 +136,10 @@ function Home() {
                         </span>
                     </div>
                 </div>
-                <Footer/>
+                <React.Suspense fallback={<div>Loading...</div>}>
+                    <Footer />
+                </React.Suspense>
+
             </div>
 
         </div>

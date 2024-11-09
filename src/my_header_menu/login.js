@@ -11,6 +11,8 @@ import eye_off from '../assets/login_img/eye-off.svg';
 import test from '../assets/login_img/Contact Us (Button).png';
 import test2 from '../assets/login_img/Contact Us (Button2).png';
 
+import LazyImage from '../action_object/lazyimg';
+
 import '../css/loginCSS/action.css';
 
 function Login() {
@@ -64,7 +66,7 @@ function LoginForm({ switchToRegister, isPasswordVisible, setPasswordVisible }) 
     return (
         <div className="w-[72.760vw] h-[42.197vw] ml-[13.646vw] mt-[4.531vw] bg-[#fcfcfc]/60 rounded-lg flex flex-col">
             <div className='ml-[25.365vw] mt-[2.708vw] w-[20.885vw] h-[4.478vw] flex items-center justify-between'>
-                <img className='w-[11.354vw] h-[4.115vw]' src={logo} alt="Logo" />
+                <LazyImage className='w-[11.354vw] h-[4.115vw]' src={logo} alt="Logo" />
                 <span className='w-[9.635vw] h-[4.478vw] font-bold font-Noto_Sans_ch text-[#3F3F46] text-[1.667vw] leading-[2.5vw] tracking-[0.333vw] flex items-center justify-center'>立即登入</span>
             </div>
 
@@ -77,7 +79,7 @@ function LoginForm({ switchToRegister, isPasswordVisible, setPasswordVisible }) 
                         { icon: Line, label: '使用Line帳戶繼續' },
                     ].map((button, index) => (
                         <button key={index} className='w-full h-[3.0176vw] rounded-[23.5px] border-[0.104vw] border-[#e2e2e2] flex items-center'>
-                            <img className='w-[1.993vw] h-[1.9922vw] ml-[2.2vw]' src={button.icon} alt={`${button.label} Icon`} />
+                            <LazyImage className='w-[1.993vw] h-[1.9922vw] ml-[2.2vw]' src={button.icon} alt={`${button.label} Icon`} />
                             <span className='w-[13.073vw] h-[1.3533vw] ml-[0.9vw] text-center text-[#3f3f3f] text-[1.042vw] font-bold font-Noto_Sans_ch leading-[1.562vw]'>{button.label}</span>
                         </button>
                     ))}
@@ -91,7 +93,7 @@ function LoginForm({ switchToRegister, isPasswordVisible, setPasswordVisible }) 
                             <input type="text" id="default-search"
                                 className="block w-full h-[2.7719vw]  pl-[0.833vw] py-[0.4166vw]   text-[0.938vw] font-normal shadow-xs text-gray-900 bg-transparent border-[0.052vw] border-[#E2E2E2] rounded-[0.417vw] placeholder-gray-400 focus:outline-none focus:border-black leading-[1.172vw]"
                                 placeholder="name@pagedone.com" />
-                            <img className=' absolute top-[0.8313vw] right-[0.883vw] w-[1.009vw] h-[1.1084vw] ' src={mail} />
+                            <LazyImage className=' absolute top-[0.8313vw] right-[0.883vw] w-[1.009vw] h-[1.1084vw] ' src={mail} />
                         </div>
                     </div>
                     <div className='w-full h-[6.0929vw] flex flex-col justify-between'>
@@ -103,7 +105,7 @@ function LoginForm({ switchToRegister, isPasswordVisible, setPasswordVisible }) 
                                 className="block w-full h-[2.7719vw] pl-[0.833vw] py-[0.4166vw] text-[0.938vw] font-normal shadow-xs text-gray-900 bg-transparent border-[0.052vw] border-[#E2E2E2] rounded-[0.417vw] placeholder-gray-400 focus:outline-none focus:border-black leading-[1.172vw]"
                                 placeholder="•••••••••••••••••"
                             />
-                            <img
+                            <LazyImage
                                 onClick={() => setPasswordVisible(!isPasswordVisible)}
                                 src={isPasswordVisible ? eye : eye_off}
                                 className="absolute top-[0.8313vw] right-[0.883vw] w-[1.009vw] h-[1.1084vw] cursor-pointer"
@@ -143,7 +145,7 @@ function RegisterForm({ switchToLogin }) {
     return (
         <div className="w-[72.760vw] h-[42.1965vw] ml-[13.646vw] mt-[4.5310vw] bg-[#fcfcfc]/60 rounded-lg flex flex-col ">
             <div className='ml-[25.365vw] mt-[2.7080vw] w-[20.885vw] h-[4.4776vw] flex items-center justify-between'>
-                <img className='w-[11.354vw] h-[4.1146vw]' src={logo} alt="Logo" />
+                <LazyImage className='w-[11.354vw] h-[4.1146vw]' src={logo} alt="Logo" />
                 <span className='w-[9.635vw] h-[4.4776vw] font-bold font-Noto_Sans_ch text-[#3F3F46] text-[1.667vw] leading-[2.5vw] tracking-[0.333vw] flex items-center justify-center'>立即註冊</span>
             </div>
 
@@ -157,7 +159,7 @@ function RegisterForm({ switchToLogin }) {
                             <input type="text" id="default-search"
                                 className="block w-full h-[2.7719vw]  pl-[0.833vw] py-[0.4166vw]   text-[0.938vw] font-normal shadow-xs text-gray-900 bg-transparent border-[0.052vw] border-[#E2E2E2] rounded-[0.417vw] placeholder-gray-400 focus:outline-none focus:border-black leading-[1.172vw]"
                                 placeholder="name@pagedone.com" />
-                            <img className=' absolute top-[0.8313vw] right-[0.883vw] w-[1.009vw] h-[1.1084vw] ' src={mail} />
+                            <LazyImage className=' absolute top-[0.8313vw] right-[0.883vw] w-[1.009vw] h-[1.1084vw] ' src={mail} />
                         </div>
                     </div>
 
@@ -170,7 +172,7 @@ function RegisterForm({ switchToLogin }) {
                                 className="block w-full h-[2.7719vw] pl-[0.833vw] py-[0.4166vw] text-[0.938vw] font-normal shadow-xs text-gray-900 bg-transparent border-[0.052vw] border-[#E2E2E2] rounded-[0.417vw] placeholder-gray-400 focus:outline-none focus:border-black leading-[1.172vw]"
                                 placeholder="•••••••••••••••••"
                             />
-                            <img
+                            <LazyImage
                                 onClick={() => setPasswordVisible(!isPasswordVisible)}
                                 src={isPasswordVisible ? eye : eye_off}
                                 className="absolute top-[0.8313vw] right-[0.883vw] w-[1.009vw] h-[1.1084vw] cursor-pointer"
@@ -187,7 +189,7 @@ function RegisterForm({ switchToLogin }) {
                                 className="block w-full h-[2.7719vw] pl-[0.833vw] py-[0.4166vw] text-[0.938vw] font-normal shadow-xs text-gray-900 bg-transparent border-[0.052vw] border-[#E2E2E2] rounded-[0.417vw] placeholder-gray-400 focus:outline-none focus:border-black leading-[1.172vw]"
                                 placeholder="•••••••••••••••••"
                             />
-                            <img
+                            <LazyImage
                                 onClick={() => setConfirmPasswordVisible(!isConfirmPasswordVisible)}
                                 src={isConfirmPasswordVisible ? eye : eye_off}
                                 className="absolute top-[0.8313vw] right-[0.883vw] w-[1.009vw] h-[1.1084vw] cursor-pointer"
@@ -224,7 +226,7 @@ function RegisterForm({ switchToLogin }) {
                         { icon: Line, label: '使用Line帳戶繼續' },
                     ].map((button, index) => (
                         <button key={index} className='w-full h-[3.0176vw] rounded-[23.5px] border-[0.104vw] border-[#e2e2e2] flex items-center'>
-                            <img className='w-[1.993vw] h-[1.9922vw] ml-[2.2vw]' src={button.icon} alt={`${button.label} Icon`} />
+                            <LazyImage className='w-[1.993vw] h-[1.9922vw] ml-[2.2vw]' src={button.icon} alt={`${button.label} Icon`} />
                             <span className='w-[13.073vw] h-[1.3533vw] ml-[0.9vw] text-center text-[#3f3f3f] text-[1.042vw] font-bold font-Noto_Sans_ch leading-[1.562vw]'>{button.label}</span>
                         </button>
                     ))}

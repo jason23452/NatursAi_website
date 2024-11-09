@@ -4,31 +4,23 @@ import Youtube from '../assets/footer_img/Youtube.svg';
 import Instagram from '../assets/footer_img/Instagram.svg';
 import Facebook from '../assets/footer_img/Facebook.svg';
 import { Link } from 'react-router-dom';
-
+import LazyImage from '../action_object/lazyimg';
 
 const Footer = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 1000); // 模擬載入延遲
-    return () => clearTimeout(timer);
-  }, []);
+  
 
   
   return (
-    <footer
-      className={`relative w-full h-[24.5825vw] bg-[#3F3F46] flex flex-col justify-center items-center z-10 transition-opacity duration-500 ${
-        isLoading ? 'opacity-0' : 'opacity-100'
-      }`}
-    >
+    <footer className={'relative w-full h-[24.5825vw] bg-[#3F3F46] flex flex-col justify-center items-center z-10 transition-opacity duration-500 '}>
       <div className='w-[76.875vw] h-[15.2572vw] flex'>
         <div className='w-[21.146vw] h-[15.2572vw] flex flex-col justify-start items-start'>
-         <Link to='/' ><img className='w-[10.208vw] h-[3.0721vw]'  src={Naturs_ai_black} onClick={() => window.scrollTo(0, 0)} /></Link> 
+         <Link to='/' ><LazyImage className='w-[10.208vw] h-[3.0721vw]'  src={Naturs_ai_black} onClick={() => window.scrollTo(0, 0)} /></Link> 
           <span className='ml-[0.208vw] mt-[1.3755vw] w-[18.281vw] h-[2.4910vw] text-white text-[1.250vw] font-Noto_Sans_ch font-light leading-[1.8750vw]'>有疑問嗎？請聯絡我們。</span>
           <span className='ml-[0.208vw] mt-[1.1459vw] w-[20.938vw] h-[2.0264vw] text-white text-[1.250vw] font-Noto_Sans_en font-light leading-[1.8750vw]'>Email: Naturs.ai.2024@gmail.com</span>
           <div className='ml-[0.208vw] mt-[3.6459vw] w-[10.781vw] h-[1.5080vw] flex justify-between items-center'>
-            <button className='w-[1.462vw] h-[1.4616vw]'><img src={Youtube} /></button>
-            <button className='w-[1.462vw] h-[1.4616vw]'><img src={Instagram} /></button>
-            <button className='w-[1.462vw] h-[1.4616vw]'><img src={Facebook} /></button>
+            <button className='w-[1.462vw] h-[1.4616vw]'><LazyImage src={Youtube} /></button>
+            <button className='w-[1.462vw] h-[1.4616vw]'><LazyImage src={Instagram} /></button>
+            <button className='w-[1.462vw] h-[1.4616vw]'><LazyImage src={Facebook} /></button>
           </div>
         </div>
         <div className='ml-[7.604vw] mt-[1.5103vw] w-[7.812vw] h-[7.7083vw] flex flex-col justify-between'>

@@ -9,21 +9,6 @@ import React, { useState } from 'react';
 
 
 
-const HoverImage = ({ defaultSrc, hoverSrc, className }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
-  return (
-    <img
-      className={className}
-      src={isHovered ? hoverSrc : defaultSrc}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      alt="hoverable image"
-    />
-  );
-};
-
-
 const ClickImage = ({ defaultSrc, clickSrc, className }) => {
   const [isClicked, setIsClicked] = useState(false);
 

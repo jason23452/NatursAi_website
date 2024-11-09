@@ -1,5 +1,6 @@
+import React, { useState } from 'react';
 import TaiwanNewsComponent from '../my_header_menu/NewsComponent';
-import Footer from './footer';
+const Footer = React.lazy(() => import('./footer'));
 
 function Information() {
     return (
@@ -10,7 +11,9 @@ function Information() {
                     <TaiwanNewsComponent />
                 </div>
                 <div className='mt-[4.446vw]'></div>
-                <Footer/>
+                <React.Suspense fallback={<div>Loading...</div>}>
+                    <Footer />
+                </React.Suspense>
             </div>
 
 

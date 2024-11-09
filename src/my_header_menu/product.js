@@ -31,11 +31,12 @@ import video1 from '../assets/product_img/宋冬野   10 連衣裙.mp4';
 import video2 from '../assets/product_img/『MV』毛不易Mao Buyi - 借 官方高畫質 Official HD MV.mp4';
 import video3 from '../assets/product_img/不染.mp4';
 import video4 from '../assets/product_img/郭源潮.mp4';
-import Footer from './footer';
-
-
+import HoverImage from '../action_object/HoverImage';
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import LazyImage from '../action_object/lazyimg';
+const Footer = React.lazy(() => import('./footer'));
+
 
 const CustomProgressBar = ({ progress, onProgressChange }) => {
     const handleClick = (e) => {
@@ -59,19 +60,7 @@ const CustomProgressBar = ({ progress, onProgressChange }) => {
 };
 
 
-const HoverImage = ({ defaultSrc, hoverSrc, className }) => {
-    const [isHovered, setIsHovered] = useState(false);
 
-    return (
-        <img
-            className={className}
-            src={isHovered ? hoverSrc : defaultSrc}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            alt="hoverable image"
-        />
-    );
-};
 
 
 
@@ -177,15 +166,15 @@ function Product() {
             <div className="absolute inset-0 ">
                 <div className="ml-[10.573vw] mt-[7.344vw] w-[68.854vw] h-[25.042vw] flex">
                     <div className="w-[33.125vw] h-[18.646vw] flex flex-col">
-                        <img src={Goeat_logo} className="w-[5.833vw] h-[3.438vw]" />
+                        <LazyImage src={Goeat_logo} className="w-[5.833vw] h-[3.438vw]" />
                         <span className="w-[33.125vw] h-[3.000vw] text-[#538AA2] text-[1.667vw] font-Baloo_Thambi font-normal leading-[3.000vw] tracking-[0.250vw]">夠益營養APP</span>
                         <span className="mt-[0.521vw] w-[33.125vw] h-[8.333vw] text-[#3F3F46] text-[1.042vw] font-Noto_Sans_ch font-normal leading-[1.257vw] tracking-[0.156vw] flex items-center">
                             夠益營養APP創新的個性化健康飲食規劃及飲食管控, 幫助您輕鬆管理和改進飲食習慣。透過先進的人工智慧技術和實時數據分析,本平台提供量身定制的飲食建議,並透過生活化的遊戲體驗活化個人整合健康管理。
                         </span>
                         <button className="mt-[0.365vw] w-[11.667vw] h-[2.917vw] bg-gradient-to-r from-[#83bbae] to-[#538aa2] rounded-[1.458vw] flex justify-center items-center text-white text-[1.250vw] font-medium font-Noto_Sans_ch leading-[1.508vw]">立即下載</button>
                     </div>
-                    <img className="ml-[6.302vw] mt-[1.562vw] w-[10.970vw] h-[23.480vw]" src={Product_preview} />
-                    <img className="ml-[4.9vw] mt-[12.917vw] w-[10.260vw] h-[10.260vw]" src={images[currentIndex]} />
+                    <LazyImage className="ml-[6.302vw] mt-[1.562vw] w-[10.970vw] h-[23.480vw]" src={Product_preview} />
+                    <LazyImage className="ml-[4.9vw] mt-[12.917vw] w-[10.260vw] h-[10.260vw]" src={images[currentIndex]} />
                 </div>
 
                 <div className="ml-[10.833vw] mt-[29.228vw] w-[80.781vw] h-[37.716vw]">
@@ -245,14 +234,14 @@ function Product() {
                             </div>
                         </div>
                         <div className=' relative ml-[1.697vw]  flex flex-col justify-between w-[28.594vw] h-[27.187vw]'>
-                            <img className=' w-[28.594vw] h-[16.198vw]' src={goeat_product_img} />
+                            <LazyImage className=' w-[28.594vw] h-[16.198vw]' src={goeat_product_img} />
                             <div className=' absolute w-[31.875vw] h-[9.531vw] bottom-0 right-0 bg-gradient-to-r from-[#399983]/50 to-[#538aa2]/50 z-0 rounded-[1.406vw] flex justify-center'>
                                 <div className='mt-[0.727vw] w-[23.688vw] h-[8.676vw] flex items-center  justify-between  '>
                                     <button
                                         onClick={handlePrevious}
                                         className="flex justify-center items-center w-[3.844vw] h-[3.844vw] bg-white rounded-full"
                                     >
-                                        <img className='w-[1.302vw] h-[2.292vw]' src={arrow_left} alt="Previous" />
+                                        <LazyImage className='w-[1.302vw] h-[2.292vw]' src={arrow_left} alt="Previous" />
                                     </button>
 
                                     {/* Video Information */}
@@ -270,7 +259,7 @@ function Product() {
                                         onClick={handleNext}
                                         className="flex justify-center items-center w-[3.844vw] h-[3.844vw] bg-white rounded-full"
                                     >
-                                        <img className='w-[1.302vw] h-[2.292vw]' src={arrow_right} alt="Next" />
+                                        <LazyImage className='w-[1.302vw] h-[2.292vw]' src={arrow_right} alt="Next" />
                                     </button>
 
                                 </div>
@@ -299,19 +288,21 @@ function Product() {
                     
                 </div>
                 <div className='ml-[20.260vw] mt-[7.031vw] w-[65.625vw] h-[46.823vw] flex justify-between'>
-                    <img className='w-[21.875vw] h-[46.823vw]' src={Product_preview} />
+                    <LazyImage className='w-[21.875vw] h-[46.823vw]' src={Product_preview} />
                     <div className='ml-[7.812vw] mt-[4.375vw] w-[35.938vw] h-[39.844vw] flex flex-col items-center '>
                         <span className='mt-[2.372vw]  w-[35.938vw] h-[3.015vw] text-[#5A4B4B] text-[2.500vw] font-Noto_Sans_ch font-black  leading-[3.016vw] flex items-center justify-center '>體驗產品</span>
                         <span className='mt-[3.796vw] text-center w-[35.938vw] h-[15.000vw]  text-[#5A4B4B] text-[1.667vw] font-Noto_Sans_ch  font-medium leading-[2.500vw] tracking-[0.267vw]'>夠益營養APP創新的個性化健康飲食規劃及飲食管控, 幫助您輕鬆管理和改進飲食習慣。透過先進的人工智慧技術和實時數據分析,本平台提供量身定制的飲食建議,並透過生活化的遊戲體驗活化個人整合健康管理。</span>
                         <button className='mt-[3.321vw] w-[29.688vw] h-[3.801vw] bg-gradient-to-r from-[#399983] to-[#538aa2] rounded-[0.729vw] flex items-center justify-center text-white text-[1.458vw] font-medium leading-[1.759vw]'>立即加入健康計畫</button>
                         <div className='mt-[3.958vw] w-[29.688vw] h-[4.219vw] flex justify-between '>
-                            <img className='w-[13.490vw] h-[4.219vw]' src={download_google} />
-                            <img  className='w-[13.490vw] h-[4.219vw]' src={download_apple} />
+                            <LazyImage className='w-[13.490vw] h-[4.219vw]' src={download_google} />
+                            <LazyImage  className='w-[13.490vw] h-[4.219vw]' src={download_apple} />
                         </div>
                     </div>
                 </div>
                 <div className='mt-[4.479vw]'></div>
-                <Footer/>
+                <React.Suspense fallback={<div>Loading...</div>}>
+                    <Footer />
+                </React.Suspense>
             </div>
            
 
