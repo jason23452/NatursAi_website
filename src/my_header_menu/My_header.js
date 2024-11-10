@@ -49,7 +49,7 @@ function My_header() {
 
 
             <div className='header_rigjt_container'>
-                <img className='translate_img'  />
+                <HoverImage className='ml-[1.4062vw] w-[0.9375vw] h-[0.9375vw]' hoverSrc={translate_green} defaultSrc={translate}   />
                 <div className='ml-[1.9792vw] w-[24.3750vw] h-[2.0833vw] flex  space-x-[1.4062vw] items-center'>
                     <div className='w-[4.3750vw] h-[1.2500vw] flex  items-center space-x-[0.5208vw] ' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                         <Link to='/login'><LazyImage className='w-[1.25vw] h-[1.250vw] ' src={isHovered ? identification_green : identification} /></Link>

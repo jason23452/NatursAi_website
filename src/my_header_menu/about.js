@@ -7,7 +7,6 @@ import closedArrow from '../assets/About_us_img/arrow.svg';
 import openArrow from '../assets/About_us_img/openArrow.svg';
 import no_robot from '../assets/About_us_img/no_robot.svg';
 import LazyImage from '../action_object/lazyimg';
-const Footer = React.lazy(() => import('./footer'));
 
 const CustomSelect = ({ options, name, value, onChange }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -68,9 +67,9 @@ function About() {
 
 
     return (
-        <div className="all_container">
-            <div className='all_container_bg'>
-                <img src={About_us_bg} className="page_bg_img" alt="Login Background" />
+        <div className="h-[109.5833vw] relative w-full">
+            <div className='absolute w-full h-[109.5833vw] -top-[3.9583vw]'>
+                <img src={About_us_bg} className="w-full object-cover" alt="Login Background" />
                 <div className='absolute inset-0'>
                     <div className='ml-[38.229vw] mt-[10.729vw] relative w-[17.760vw] h-[6.615vw]'>
                         <LazyImage className='w-[17.760vw] h-[5.469vw]' src={title_img} />
@@ -141,9 +140,7 @@ function About() {
                         </div>
                     </form>
                 </div>
-                <React.Suspense fallback={<div>Loading...</div>}>
-                    <Footer />
-                </React.Suspense>
+                
             </div>
         </div>
     );

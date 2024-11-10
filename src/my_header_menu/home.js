@@ -14,7 +14,6 @@ import LazyImage from '../action_object/lazyimg';
 
 import '../css/All.css';
 
-const Footer = React.lazy(() => import('./footer'));
 
 
 function Home() {
@@ -30,9 +29,9 @@ function Home() {
 
 
     return (
-        <div className="all_container">
-            <div className='all_container_bg'>
-                <img src={home_bg} className="page_bg_img" alt="Login Background" />
+        <div className="h-[108.6459vw] relative w-full">
+            <div className='absolute w-full h-[108.6459vw] -top-[3.9583vw]'>
+                <img src={home_bg} className="w-full object-cover" alt="Login Background" />
                 {/* <img src={test} className=' absolute top-0 opacity-60' /> */}
                 <div className='All_content_containers'>
                     <div className='w-[88.594vw] h-[35.260vw] ml-[9.271vw] mt-[13.229vw] flex justify-between'>
@@ -137,9 +136,7 @@ function Home() {
                         </span>
                     </div>
                 </div>
-                <React.Suspense fallback={<div>Loading...</div>}>
-                    <Footer />
-                </React.Suspense>
+              
 
             </div>
 

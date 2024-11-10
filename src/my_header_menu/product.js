@@ -35,7 +35,6 @@ import HoverImage from '../action_object/HoverImage';
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import LazyImage from '../action_object/lazyimg';
-const Footer = React.lazy(() => import('./footer'));
 
 
 const CustomProgressBar = ({ progress, onProgressChange }) => {
@@ -77,7 +76,7 @@ function Product() {
     const [currentTime, setCurrentTime] = useState("00:00:00");
     const [duration, setDuration] = useState("00:00:00");
 
-    const videos = [video1, video2, video3, video4]; // 影片檔案列表
+    const videos = [video1, video2, video3, video4];
     const [currentVideoIndex, setCurrentVideoIndex] = useState(0); // 當前影片的索引
 
 
@@ -154,10 +153,10 @@ function Product() {
     };
 
     return (
-        <div className="all_container">
+        <div className="h-[221.0417vw] relative w-full">
             {/* Background Image */}
-            <div className="all_container_bg">
-                <img src={Product_bg} className="page_bg_img" alt="Login Background" />
+            <div className="absolute w-full h-[221.0417vw] -top-[3.9583vw]">
+                <img src={Product_bg} className="w-full object-cover" alt="Login Background" />
                 {/* <img src={Product_test} className=" absolute  top-0 " alt="Login Background" /> */}
 
             </div>
@@ -300,9 +299,7 @@ function Product() {
                     </div>
                 </div>
                 <div className='mt-[4.479vw]'></div>
-                <React.Suspense fallback={<div>Loading...</div>}>
-                    <Footer />
-                </React.Suspense>
+             
             </div>
            
 

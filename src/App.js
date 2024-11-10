@@ -9,30 +9,42 @@ import Login from './my_header_menu/login';
 
 import Product from './my_header_menu/product';
 import Profile from './my_header_menu/profile';
+const Footer = React.lazy(() => import('./my_header_menu/footer'));
+
+
 
 
 
 
 function App() {
+  const location = useLocation();
+  const pathsWithFooter = ["/", "/product", "/about", "/Information"];
 
-  
+
 
   return (
     <>
       {/* Global Header */}
+
       <MyHeader />
 
       {/* Routes */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/product" element={<Product />} />
-        <Route path="/Meal_planning" element={<Meal_planning />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/Information" element={<Information />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/profile" element={<Profile />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/Meal_planning" element={<Meal_planning />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/Information" element={<Information />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+      <React.Suspense fallback={<div>Loading...</div>}>
+            {pathsWithFooter.includes(location.pathname) && <Footer />}
+          </React.Suspense>
+
+
     </>
+
   );
 }
 
