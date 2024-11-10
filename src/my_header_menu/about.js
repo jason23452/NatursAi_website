@@ -1,3 +1,4 @@
+import '../css/All.css';
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import About_us_bg from '../assets/About_us_img/About us_bg.svg';
@@ -67,9 +68,9 @@ function About() {
 
 
     return (
-        <div className="relative w-full h-full">
-            <div className='absolute w-[100%]  -top-[3.958vw]'>
-                <img src={About_us_bg} className="w-full object-cover" alt="Login Background" />
+        <div className="all_container">
+            <div className='all_container_bg'>
+                <img src={About_us_bg} className="page_bg_img" alt="Login Background" />
                 <div className='absolute inset-0'>
                     <div className='ml-[38.229vw] mt-[10.729vw] relative w-[17.760vw] h-[6.615vw]'>
                         <LazyImage className='w-[17.760vw] h-[5.469vw]' src={title_img} />

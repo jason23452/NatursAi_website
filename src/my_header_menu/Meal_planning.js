@@ -1,3 +1,4 @@
+import React from 'react';
 import Meal_planning_bg from '../assets/Meal_planning_img/Meal_planning.svg';
 import phone_img from '../assets/Meal_planning_img/phone_img.svg';
 import download_apple from '../assets/Meal_planning_img/download_apple.svg';
@@ -5,9 +6,9 @@ import download_google from '../assets/Meal_planning_img/download_google.svg';
 import LazyImage from '../action_object/lazyimg';
 function Meal_planning() {
     return (
-        <div className="relative w-full h-full">
-            <div className='absolute w-[100%]  -top-[3.958vw]'>
-                <img src={Meal_planning_bg} className="w-full object-cover" alt="Login Background" />
+        <div className="all_container">
+            <div className='all_container_bg'>
+                <img src={Meal_planning_bg} className="page_bg_img" alt="Login Background" />
                 <div className='absolute inset-0 '>
                     <div className='ml-[15.937vw] mt-[12.969vw] w-[72.500vw] h-[33.176vw] flex  '>
                         <LazyImage className='w-[15.521vw] h-[33.176vw]' src={phone_img} />

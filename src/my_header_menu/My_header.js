@@ -1,3 +1,4 @@
+import '../css/headerCSS/header.css'
 import Logo from '../assets/header_img/Logo.svg';
 import Logo_black from '../assets/header_img/Logo_black.svg';
 import test_header from '../assets/header_img/header.png';
@@ -32,36 +33,40 @@ function My_header() {
 
 
     return (
-        <div className=" relative w-full h-[3.958vw] bg-transparent flex   items-center z-10  ">
+        <div className=" header_container ">
             {/* <img className=' absolute  top-0 opacity-20' src={test_header}/> */}
-            <div className='ml-[1.62vw] w-[39.69vw] h-[2.917vw] flex space-x-[1.656vw] items-center'>
-                <Link to='/'><HoverImage className='ml-[0.94vw] w-[8.02vw] h-[2.917vw]' defaultSrc={Logo} hoverSrc={Logo_black} /></Link>
+            <div className='header_left_container'>
+                <Link to='/'><HoverImage className='header_logo' defaultSrc={Logo} hoverSrc={Logo_black} /></Link>
 
-                <div className=' h-[1.354vw] border-[0.052vw] border-[#c3c3c3]  '></div>
-                <Link to='/' className='w-[3.12vw]  text-[#3F3F46] text-center font-Noto_Sans_ch font-medium text-[1.04vw]    leading-none tracking-[0.10vw]  hover:text-[#538AA2]'>首頁</Link>
-                <Link to='/product' className='w-[3.12vw] text-[#3F3F46] text-center font-Noto_Sans_ch font-medium text-[1.04vw]    leading-none tracking-[0.10vw] hover:text-[#538AA2]'>產品</Link>
-                <Link to='/Meal_planning'  className='w-[5.2vw] text-[#3F3F46] text-center font-Noto_Sans_ch font-medium text-[1.04vw]    leading-none tracking-[0.10vw] hover:text-[#538AA2]'>飲食規劃</Link>
-                <Link to='/about' className='w-[5.2vw] text-[#3F3F46] text-center font-Noto_Sans_ch font-medium text-[1.04vw]    leading-none tracking-[0.10vw] hover:text-[#538AA2]'>聯絡我們</Link>
-                <Link to='/Information' className='w-[3.12vw] text-[#3F3F46] text-center font-Noto_Sans_ch font-medium text-[1.04vw]    leading-none tracking-[0.10vw] hover:text-[#538AA2]'>新聞</Link>
+                <div className='header_Line'></div>
+                
+                <Link to='/' className='header_left_text'>首頁</Link>
+                <Link to='/product' className='header_left_text'>產品</Link>
+                <Link to='/Meal_planning'  className='header_left_text2'>飲食規劃</Link>
+                <Link to='/about' className='header_left_text2'>聯絡我們</Link>
+                <Link to='/Information' className='header_left_text'>新聞</Link>
             </div>
 
 
-            <div className='ml-auto  w-[29.84vw] h-[2.812vw] bg-white   shadow-lg rounded-full flex  items-center'>
-                <HoverImage className='ml-[1.41vw] w-[0.94vw] h-[0.938vw]' defaultSrc={translate} hoverSrc={translate_green} />
-                <div className='ml-[1.98vw] w-[24.38vw] h-[2.083vw] flex  space-x-[1.41vw] items-center'>
-                    <div className='w-[4.38vw] h-[1.250vw] flex  items-center space-x-[0.525vw] ' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+            <div className='header_rigjt_container'>
+                <img className='translate_img'  />
+                <div className='ml-[1.9792vw] w-[24.3750vw] h-[2.0833vw] flex  space-x-[1.4062vw] items-center'>
+                    <div className='w-[4.3750vw] h-[1.2500vw] flex  items-center space-x-[0.5208vw] ' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
                         <Link to='/login'><LazyImage className='w-[1.25vw] h-[1.250vw] ' src={isHovered ? identification_green : identification} /></Link>
-                        <Link to='/login' className={`text-start font-Noto_Sans_ch text-[1.04vw] leading-[1.56vw] ${isHovered ? 'text-[#538AA2]' : 'text-[#3F3F46]'}`}>登入</Link>
+                        <Link to='/login' className={` text-start font-Noto_Sans_ch text-[1.0417vw] leading-[1.5625vw] ${isHovered ? 'text-[#538AA2]' : 'text-[#3F3F46]'}`}>登入</Link>
                     </div>
-                    <div className=' w-[8.39vw] h-[1.667vw] flex items-center bg-rgba(253.94, 253.94, 253.94, 0.50) shadow-lg rounded-full '>
-                        <LazyImage className='w-[1.67vw] h-[1.562vw]' src={coin} />
-                        <span className='w-[3.33vw] h-[1.250vw] ml-[0.42vw] text-start text-[0.83vw] text-[#538AA2] font-Noto_Sans_en '>1,200</span>
-                        <LazyImage className='w-[0.94vw] h-[1.250vw] ml-[1.51vw]' src={add} />
+
+                    <div className=' w-[8.3854vw] h-[1.6667vw] flex items-center bg-[#fdfdfd]/50 shadow-lg rounded-full '>
+                        <LazyImage className='w-[1.6667vw] h-[1.5625vw]' src={coin} />
+                        <span className='w-[3.3333vw] h-[1.250vw] ml-[0.4167vw] text-start text-[0.83vw] text-[#538AA2] font-Noto_Sans_ch '>1,200</span>
+                        <LazyImage className='w-[0.9375vw] h-[1.250vw] ml-[1.5104vw]' src={add} />
                     </div>
-                    <div className=' h-[1.354vw] border-[0.052vw] border-[#c3c3c3]  '></div>
+
+                    <div className=' header_Line '></div>
+
                     <HoverImage className='w-[1.25vw] h-[1.250vwh]' defaultSrc={chat_alt} hoverSrc={chat_alt_green} />
                     <HoverImage className='w-[1.25vw] h-[1.250vw]' defaultSrc={bell} hoverSrc={bell_green} />
-                    <Link to='/profile'> <LazyImage className='w-[2.08vw] h-[2.083vw] rounded-full  hover:scale-110 transition-transform duration-200' src={user_circle} />  </Link>
+                    <Link to='/profile'> <LazyImage className='w-[2.0833vw] h-[2.0833vw] rounded-full  hover:scale-110 transition-transform duration-200' src={user_circle} />  </Link>
                 </div>
             </div>
 

@@ -12,8 +12,9 @@ import { Link } from 'react-router-dom';
 import HoverImage from '../action_object/HoverImage'
 import LazyImage from '../action_object/lazyimg';
 
-const Footer = React.lazy(() => import('./footer'));
+import '../css/All.css';
 
+const Footer = React.lazy(() => import('./footer'));
 
 
 function Home() {
@@ -29,11 +30,11 @@ function Home() {
 
 
     return (
-        <div className="relative w-full h-full">
-            <div className='absolute w-full  -top-[3.958vw]'>
-                <img src={home_bg} className="w-full object-cover" alt="Login Background" />
+        <div className="all_container">
+            <div className='all_container_bg'>
+                <img src={home_bg} className="page_bg_img" alt="Login Background" />
                 {/* <img src={test} className=' absolute top-0 opacity-60' /> */}
-                <div className='  absolute inset-0 '>
+                <div className='All_content_containers'>
                     <div className='w-[88.594vw] h-[35.260vw] ml-[9.271vw] mt-[13.229vw] flex justify-between'>
 
                         <div className='w-[33.125vw] h-[18.281vw] flex flex-col'>
@@ -51,17 +52,17 @@ function Home() {
                                 </span>
                             </span>
 
-                            <button className='mt-[0.365vw] w-[11.667vw] h-[2.917vw] bg-gradient-to-r from-[#399983] to-[#538aa2] flex justify-center items-center hover:from-[#3F3F46] hover:to-[#3F3F46]'>
-                                <Link to='/product' className='text-center text-white text-[1.250vw] font-medium font-Noto_Sans_ch leading-[1.508vw] '>深入了解</Link>
-                            </button>
+                            <Link to='/product' className='mt-[0.365vw] w-[11.667vw] h-[2.917vw] bg-gradient-to-r from-[#399983] to-[#538aa2] flex justify-center items-center text-center text-white text-[1.250vw] font-medium font-Noto_Sans_ch leading-[1.508vw] hover:from-[#3F3F46] hover:to-[#3F3F46]'>
+                                深入了解
+                            </Link>
                         </div>
                         <div className='mr-[0.8vw] mt-auto w-[11.667vw] h-[18.021vw] flex flex-col justify-between'>
-                            <button className='w-full h-[2.917vw] bg-gradient-to-r from-[#399983] to-[#538aa2] flex justify-center items-center hover:from-[#3F3F46] hover:to-[#3F3F46]'>
-                                <Link to='/Information' className='text-center text-white text-[1.250vw] font-medium font-Noto_Sans_ch leading-[1.508vw]'>新聞動態</Link>
-                            </button>
-                            <button className='w-full h-[2.917vw] bg-gradient-to-r from-[#399983] to-[#538aa2] flex justify-center items-center hover:from-[#3F3F46] hover:to-[#3F3F46]'>
-                                <Link to='/product' className='text-center text-white text-[1.250vw] font-medium font-Noto_Sans_ch leading-[1.508vw]'>健康管理APP</Link>
-                            </button>
+                            <Link to='/Information' className='mt-[0.365vw] w-[11.667vw] h-[2.917vw] bg-gradient-to-r from-[#399983] to-[#538aa2] flex justify-center items-center text-center text-white text-[1.250vw] font-medium font-Noto_Sans_ch leading-[1.508vw] hover:from-[#3F3F46] hover:to-[#3F3F46]'>
+                                新聞動態
+                            </Link>
+                            <Link to='/product' className='mt-[0.365vw] w-[11.667vw] h-[2.917vw] bg-gradient-to-r from-[#399983] to-[#538aa2] flex justify-center items-center text-center text-white text-[1.250vw] font-medium font-Noto_Sans_ch leading-[1.508vw] hover:from-[#3F3F46] hover:to-[#3F3F46]'>
+                                健康管理APP
+                            </Link>
                         </div>
                     </div>
                     <div className='flex w-[88.646vw] h-[16.562vw] ml-[4.375vw]'>

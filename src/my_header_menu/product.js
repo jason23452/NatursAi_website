@@ -154,16 +154,16 @@ function Product() {
     };
 
     return (
-        <div className="relative w-full h-full">
+        <div className="all_container">
             {/* Background Image */}
-            <div className="absolute w-[100%]  -top-[3.958vw]">
-                <img src={Product_bg} className="w-full object-cover" alt="Login Background" />
+            <div className="all_container_bg">
+                <img src={Product_bg} className="page_bg_img" alt="Login Background" />
                 {/* <img src={Product_test} className=" absolute  top-0 " alt="Login Background" /> */}
 
             </div>
 
             {/* Content */}
-            <div className="absolute inset-0 ">
+            <div className="All_content_containers">
                 <div className="ml-[10.573vw] mt-[7.344vw] w-[68.854vw] h-[25.042vw] flex">
                     <div className="w-[33.125vw] h-[18.646vw] flex flex-col">
                         <LazyImage src={Goeat_logo} className="w-[5.833vw] h-[3.438vw]" />

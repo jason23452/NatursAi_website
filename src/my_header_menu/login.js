@@ -37,13 +37,12 @@ function Login() {
     };
 
     return (
-        <div className="relative w-full h-screen">
+        <div className="login_all_container">
             {/* 背景图片 */}
-            <div className='absolute w-[100%] h-[118.5510vh]  -top-[3.958vw]'>
-                <img src={login_bg} className="w-full h-full   object-cover" alt="Login Background" />
+            <div className='all_container_bg'>
+                <img src={login_bg} className="login_bg_img" alt="Login Background" />
                 {/* <img src={test} className=" absolute opacity-85 top-[162px]  left-[255px]" alt="Login Background" /> */}
                 {/* <img src={test2} className=" absolute opacity-85 top-[162px]  left-[255px]" alt="Login Background" /> */}
-
             </div>
 
             {/* 内容容器 */}

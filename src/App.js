@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import MyHeader from './my_header_menu/My_header'; // Header component
-
 import Home from './my_header_menu/home'; // Home page component
 import Meal_planning from './my_header_menu/Meal_planning';
 import About from './my_header_menu/about'; // About page component
@@ -11,33 +10,12 @@ import Login from './my_header_menu/login';
 import Product from './my_header_menu/product';
 import Profile from './my_header_menu/profile';
 
-// Custom hook to handle scroll-to-top behavior for navigation and browser actions
-function useScrollToTop() {
-  const location = useLocation();
 
-  useEffect(() => {
-    // Scroll to the top on route changes
-    window.scrollTo(0, 0);
-  }, [location]);
 
-  useEffect(() => {
-    // Scroll to top when browser back/forward buttons are clicked
-    const handlePopState = () => {
-      window.scrollTo(0, 0);
-    };
-
-    // Attach event listener for popstate (back/forward navigation)
-    window.addEventListener('popstate', handlePopState);
-
-    // Cleanup event listener
-    return () => {
-      window.removeEventListener('popstate', handlePopState);
-    };
-  }, []);
-}
 
 function App() {
-  useScrollToTop(); // Apply scroll-to-top behavior
+
+  
 
   return (
     <>
