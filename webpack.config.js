@@ -71,13 +71,21 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'dist'),
+      directory: path.join(__dirname, 'dist'), // 静态文件目录
     },
-    historyApiFallback: true, // 支持 React 路由
-    port: 3000,
-    open: true,
-    compress: true,
-    hot: true,
-    historyApiFallback: true, // 支持 React SPA 路由
+    host: '0.0.0.0', // 接受外部连接
+    port: 3000, // 开发服务器端口
+    allowedHosts: 'all', // 禁用 Host 检查，解决 Invalid Host header 问题
+    historyApiFallback: true, // React SPA 路由支持
+    compress: true, // 启用 gzip 压缩
+    hot: true, // 启用模块热替换
+    open: true, // 自动打开浏览器
+    client: {
+      webSocketURL: {
+        hostname: 'localhost', // WebSocket 绑定的主机名
+        port: 3000, // WebSocket 使用的端口
+      },
+    },
+    https: false, // 使用 HTTP，HTTPS 由 ngrok 提供
   },
 };
