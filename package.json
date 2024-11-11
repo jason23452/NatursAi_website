@@ -27,8 +27,8 @@
     "xml2js": "^0.6.2"
   },
   "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
+    "start": "webpack serve --env mode=development", 
+    "build": "webpack --env mode=production", 
     "test": "react-app-rewired test"
   },
   "eslintConfig": {
@@ -37,17 +37,21 @@
       "react-app/jest"
     ]
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+"browserslist": {
+  "production": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all",
+    "last 2 iOS versions",
+    "last 2 Android versions"
+  ],
+  "development": [
+    "last 2 chrome versions",
+    "last 2 firefox versions",
+    "last 2 safari versions"
+  ]
+    
+
   },
   "devDependencies": {
     "@babel/preset-react": "^7.25.9",

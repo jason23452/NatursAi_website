@@ -30,7 +30,7 @@ function Home() {
     return (
         <div className="h-[108.6459vw] relative w-full">
             <div className='absolute w-full h-[108.6459vw] -top-[3.9583vw]'>
-                <img src={home_bg} className="w-full object-cover" alt="Login Background" />
+                <img src={home_bg} className="w-full   object-cover" alt="Login Background" />
                 {/* <img src={test} className=' absolute top-0 opacity-60' /> */}
                 <div className='absolute inset-0'>
                     <div className='w-[88.594vw] h-[35.260vw] ml-[9.271vw] mt-[13.229vw] flex justify-between '>

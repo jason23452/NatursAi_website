@@ -2,8 +2,10 @@
 module.exports = {
   mode: 'jit', // 确保启用 JIT 模式
   content: [
-    './src/**/*.{html,js,jsx,ts,tsx}', // 適配常見框架
-    './public/**/*.html', // 包含公共文件
+    './src/**/*.html',
+    './src/**/*.js',
+    './src/**/*.jsx',
+    './src/**/*.tsx',
   ],
   theme: {
     extend: {

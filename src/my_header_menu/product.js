@@ -25,7 +25,12 @@ import Contact_us_black from '../assets/product_img/Contact_us_black.svg';
 import download_google from '../assets/product_img/download_google.svg';
 import download_apple from '../assets/product_img/download_apple.svg';
 
-import { FaPlay, FaPause, FaVolumeUp } from 'react-icons/fa'; // 導入所需的圖標
+import FaPlay from '../assets/product_img/FaPlay.svg';
+import FaPause from '../assets/product_img/FaPause.svg';
+import FaVolumeUp from '../assets/product_img/FaVolumeUp.svg';
+
+
+
 
 import video1 from '../assets/product_img/宋冬野   10 連衣裙.mp4';
 import video2 from '../assets/product_img/『MV』毛不易Mao Buyi - 借 官方高畫質 Official HD MV.mp4';
@@ -199,13 +204,16 @@ function Product() {
                             {/* Video Controls */}
                             <div className="w-full absolute bottom-0 flex items-center bg-black p-[0.579vw] opacity-80 space-x-[1.208vw] rounded-[1.823vw]">
                                 {/* Play/Pause Button */}
-                                <button onClick={handlePlayPause} className="text-white ml-[0.104vw]">
-                                    {isPlaying ? <FaPause className="w-[0.781vw] h-[0.781vw]" /> : <FaPlay className="w-[0.781vw] h-[0.781vw]" />}
-                                </button>
+                                <button onClick={handlePlayPause} className="text-white ml-[0.104vw] my-auto">
+                                    <img
+                                        src={isPlaying ? FaPause : FaPlay}
+                                        alt={isPlaying ? "Pause" : "Play"}
+                                        className="w-[0.7292vw] h-[0.8333vw] " // 可以根據需求調整圖片大小
+                                    />                                </button>
 
                                 {/* Volume Control */}
-                                <button onClick={toggleVolumeControl} className="text-white">
-                                    <FaVolumeUp className="w-[1.042vw] h-[1.042vw]" />
+                                <button onClick={toggleVolumeControl} className="text-white my-auto">
+                                    <img className='w-[0.9896vw] h-[0.9896vw]' src={FaVolumeUp} />
                                 </button>
                                 {showVolumeControl && (
                                     <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-gray-700 p-2 rounded">
@@ -278,13 +286,13 @@ function Product() {
                         <HoverImage className='w-[38.438vw] h-[38.438vw]' defaultSrc={Function_1} hoverSrc={Function_1_black} />
                         <div className='w-[39.375vw] h-[38.438vw] flex flex-col justify-between '>
                             <div className='w-[39.375vw] h-[18.072vw] flex justify-between'>
-                               <HoverImage className='w-[18.281vw] h-[18.072vw]' defaultSrc={Function_2} hoverSrc={Function_2_black} />
-                               <HoverImage className='w-[18.073vw] h-[18.072vw]' defaultSrc={Function_3} hoverSrc={Function_3_black} />
+                                <HoverImage className='w-[18.281vw] h-[18.072vw]' defaultSrc={Function_2} hoverSrc={Function_2_black} />
+                                <HoverImage className='w-[18.073vw] h-[18.072vw]' defaultSrc={Function_3} hoverSrc={Function_3_black} />
                             </div>
-                            <Link to='/about' ><HoverImage className='w-full h-[18.072vw]'  defaultSrc={Contact_us} hoverSrc={Contact_us_black} /></Link>
+                            <Link to='/about' ><HoverImage className='w-full h-[18.072vw]' defaultSrc={Contact_us} hoverSrc={Contact_us_black} /></Link>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div className='ml-[20.260vw] mt-[7.031vw] w-[65.625vw] h-[46.823vw] flex justify-between'>
                     <LazyImage className='w-[21.875vw] h-[46.823vw]' src={Product_preview} />
@@ -294,14 +302,14 @@ function Product() {
                         <button className='mt-[3.321vw] w-[29.688vw] h-[3.801vw] bg-gradient-to-r from-[#399983] to-[#538aa2] rounded-[0.729vw] flex items-center justify-center text-white text-[1.458vw] font-medium leading-[1.759vw]'>立即加入健康計畫</button>
                         <div className='mt-[3.958vw] w-[29.688vw] h-[4.219vw] flex justify-between '>
                             <LazyImage className='w-[13.490vw] h-[4.219vw]' src={download_google} />
-                            <LazyImage  className='w-[13.490vw] h-[4.219vw]' src={download_apple} />
+                            <LazyImage className='w-[13.490vw] h-[4.219vw]' src={download_apple} />
                         </div>
                     </div>
                 </div>
                 <div className='mt-[4.479vw]'></div>
-             
+
             </div>
-           
+
 
         </div>
     );
