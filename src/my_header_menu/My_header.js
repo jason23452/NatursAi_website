@@ -56,7 +56,7 @@ function My_header() {
                         <Link to='/login' className={` text-start font-Noto_Sans_ch text-20px  leading-20px ${isHovered ? 'text-538aa2' : 'text-3F3F46 '}`}>登入</Link>
                     </div>
 
-                    <div className=' w-[8.3854vw] h-[1.6667vw] flex items-center bg-[#fdfdfd]/50 shadow-lg rounded-full '>
+                    <div className=' w-[8.3854vw] h-[1.6667vw] flex items-center bg-fdfdfd/50 shadow-lg rounded-full '>
                         <LazyImage className='w-[1.6667vw] h-[1.5625vw]' src={coin} />
                         <span className='w-[3.3333vw] h-[1.250vw] ml-[0.4167vw] text-start text-[0.83vw] text-538aa2 font-Noto_Sans_ch '>1,200</span>
                         <LazyImage className='w-[0.9375vw] h-[1.250vw] ml-[1.5104vw]' src={add} />

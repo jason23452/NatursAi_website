@@ -2,9 +2,8 @@
 module.exports = {
   mode: 'jit', // 确保启用 JIT 模式
   content: [
-    './src/**/*.{html,js,jsx,css,ts,tsx}', // 添加 ts/tsx 文件支持（如果需要）
-    './public/**/*.html',
-    './src/css/**/*.{css}', // 包含所有 CSS 文件
+    './src/**/*.{html,js,jsx,ts,tsx}', // 適配常見框架
+    './public/**/*.html', // 包含公共文件
   ],
   theme: {
     extend: {
@@ -20,6 +19,7 @@ module.exports = {
       },
       backgroundColor:{
         'c3c3c3' : '#c3c3c3',
+        'fdfdfd' : '#fdfdfd',
 
       },
 
