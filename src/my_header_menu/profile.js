@@ -46,9 +46,9 @@ function Profile() {
   const [imageSrc, setImageSrc] = useState(search);
 
   return (
-    <div className="all_container">
-      <div className='profile_container_bg'>
-        <img src={setting_bg} className="page_bg_img " alt="Login Background" />
+    <div className="relative w-full h-full">
+      <div className='absolute h-[20.5729vw]  w-full -top-[3.9583vw]'>
+        <img src={setting_bg} className="w-full object-cover " alt="Login Background" />
         {/* <img src={test} className=" absolute opacity-85 top-0 " alt="Login Background" /> */}
         <div className='absolute w-[26.510vw] h-[8.6979vw] left-[20.052vw] top-[9.1147vw] flex z-10'>
             <img src={user_photo}/>

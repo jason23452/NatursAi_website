@@ -162,7 +162,7 @@ function Product() {
             </div>
 
             {/* Content */}
-            <div className="All_content_containers">
+            <div className="absolute inset-0">
                 <div className="ml-[10.573vw] mt-[7.344vw] w-[68.854vw] h-[25.042vw] flex">
                     <div className="w-[33.125vw] h-[18.646vw] flex flex-col">
                         <LazyImage src={Goeat_logo} className="w-[5.833vw] h-[3.438vw]" />

@@ -1,71 +1,10 @@
-/* Container Styles */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/baloo-thambi');
 
+@layer components {
 
-@layer components  {
-    .common_container {
-        @apply relative w-full;
-    }
-
-    .all_container {
-        @apply common_container h-full;
-    }
-
-    .login_all_container {
-        @apply common_container h-screen;
-    }
-
-    /* Background Styles */
-    .common_container_bg {
-        @apply absolute w-full -top-[3.9583vw];
-    }
-
-    .all_container_bg {
-        @apply common_container_bg;
-    }
-
-    .login_container_bg {
-        @apply common_container_bg h-[118.5510vh];
-    }
-
-    .profile_container_bg {
-        @apply common_container_bg h-[20.5729vw];
-    }
-
-    /* Image Styles */
-    .common_bg_img {
-        @apply w-full object-cover;
-    }
-
-    .page_bg_img {
-        @apply common_bg_img;
-    }
-
-    .login_bg_img {
-        @apply common_bg_img h-full;
-    }
-
-    /* Layout Utility Styles */
-    .All_content_containers {
-        @apply absolute inset-0;
-    }
-
-    /* Button Styles */
-    .button_common {
-        @apply bg-gradient-to-r from-[#399983] to-[#538aa2];
-        @apply flex justify-center items-center text-center text-white;
-        @apply font-medium font-Noto_Sans_ch;
-        @apply hover:from-[#3F3F46] hover:to-[#3F3F46];
-    }
-
-    .Line_common {
-        @apply w-[0.0521vw] bg-[#c3c3c3];
-    }
-    
-
-
-    
 }

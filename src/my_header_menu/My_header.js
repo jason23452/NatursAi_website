@@ -33,22 +33,22 @@ function My_header() {
 
 
     return (
-        <div className=" header_container ">
+        <div className=" flex items-center h-[3.9583vw] bg-transparent  z-10 relative w-full ">
             {/* <img className=' absolute  top-0 opacity-20' src={test_header}/> */}
-            <div className='header_left_container'>
+            <div className='flex items-center ml-[1.6146vw] w-[39.6875vw] h-[2.917vw]  space-x-[1.6667vw] '>
                 <Link to='/'><HoverImage className='header_logo' defaultSrc={Logo} hoverSrc={Logo_black} /></Link>
 
-                <div className='header_Line'></div>
+                <div className='h-[1.3542vw] w-[0.0521vw] bg-[#c3c3c3]'></div>
                 
-                <Link to='/' className='header_left_text'>首頁</Link>
-                <Link to='/product' className='header_left_text'>產品</Link>
-                <Link to='/Meal_planning'  className='header_left_text2'>飲食規劃</Link>
-                <Link to='/about' className='header_left_text2'>聯絡我們</Link>
-                <Link to='/Information' className='header_left_text'>新聞</Link>
+                <Link to='/' className=' flex justify-center text-[#3F3F46]  font-Noto_Sans_ch font-medium  text-[1.0417vw]    leading-[1.5625vw] tracking-[0.1042vw]  hover:text-[#538AA2] w-[3.1250vw] '>首頁</Link>
+                <Link to='/product' className=' flex justify-center text-[#3F3F46]  font-Noto_Sans_ch font-medium  text-[1.0417vw]    leading-[1.5625vw] tracking-[0.1042vw]  hover:text-[#538AA2] w-[3.1250vw] '>產品</Link>
+                <Link to='/Meal_planning'  className='flex justify-center text-[#3F3F46]  font-Noto_Sans_ch font-medium  text-[1.0417vw]    leading-[1.5625vw] tracking-[0.1042vw]  hover:text-[#538AA2] w-[5.2083vw]'>飲食規劃</Link>
+                <Link to='/about' className='flex justify-center text-[#3F3F46]  font-Noto_Sans_ch font-medium  text-[1.0417vw]    leading-[1.5625vw] tracking-[0.1042vw]  hover:text-[#538AA2] w-[5.2083vw]'>聯絡我們</Link>
+                <Link to='/Information' className=' flex justify-center text-[#3F3F46]  font-Noto_Sans_ch font-medium  text-[1.0417vw]    leading-[1.5625vw] tracking-[0.1042vw]  hover:text-[#538AA2] w-[3.1250vw] '>新聞</Link>
             </div>
 
 
-            <div className='header_rigjt_container'>
+            <div className='flex items-center  ml-auto  w-[29.8438vw] h-[2.8125vw]   bg-white   shadow-lg rounded-full '>
                 <HoverImage className='ml-[1.4062vw] w-[0.9375vw] h-[0.9375vw]' hoverSrc={translate_green} defaultSrc={translate}   />
                 <div className='ml-[1.9792vw] w-[24.3750vw] h-[2.0833vw] flex  space-x-[1.4062vw] items-center'>
                     <div className='w-[4.3750vw] h-[1.2500vw] flex  items-center space-x-[0.5208vw] ' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
@@ -62,7 +62,7 @@ function My_header() {
                         <LazyImage className='w-[0.9375vw] h-[1.250vw] ml-[1.5104vw]' src={add} />
                     </div>
 
-                    <div className=' header_Line '></div>
+                    <div className=' h-[1.3542vw] w-[0.0521vw] bg-[#c3c3c3] '></div>
 
                     <HoverImage className='w-[1.25vw] h-[1.250vwh]' defaultSrc={chat_alt} hoverSrc={chat_alt_green} />
                     <HoverImage className='w-[1.25vw] h-[1.250vw]' defaultSrc={bell} hoverSrc={bell_green} />

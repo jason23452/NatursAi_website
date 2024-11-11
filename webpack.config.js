@@ -30,7 +30,7 @@ module.exports = {
                 plugins: [require('tailwindcss'), require('autoprefixer')],
               },
             },
-          },
+          }
         ],
       },
       {
@@ -78,8 +78,9 @@ module.exports = {
     allowedHosts: 'all', // 禁用 Host 检查，解决 Invalid Host header 问题
     historyApiFallback: true, // React SPA 路由支持
     compress: true, // 启用 gzip 压缩
-    hot: true, // 启用模块热替换
     open: true, // 自动打开浏览器
+    hot: true, // 启用模块热替换
+    watchFiles: ['tailwind.config.js', './src/**/*.{html,js,jsx,css}'], // 监控配置文件和相关目录
     client: {
       webSocketURL: {
         hostname: 'localhost', // WebSocket 绑定的主机名
