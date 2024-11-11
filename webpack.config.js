@@ -18,6 +18,7 @@ module.exports = {
   },
   module: {
     rules: [
+      // 加載 CSS
       {
         test: /\.css$/,
         use: [
@@ -30,9 +31,10 @@ module.exports = {
                 plugins: [require('tailwindcss'), require('autoprefixer')],
               },
             },
-          }
+          },
         ],
       },
+      // 加載 JavaScript 和 JSX
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
@@ -43,11 +45,20 @@ module.exports = {
           },
         },
       },
+      // 加載圖片和多媒體
       {
         test: /\.(png|jpe?g|gif|svg|mp4|webm|ogg)$/,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/[name].[hash][ext]', // 输出到 dist/assets 目录
+          filename: 'assets/[name].[hash][ext]',
+        },
+      },
+      // 加載字體
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i, // 字體文件
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name].[hash][ext]', // 輸出到 dist/fonts 資料夾
         },
       },
     ],
