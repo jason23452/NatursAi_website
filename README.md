@@ -1,6 +1,13 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+root@DaveServer:/home/NatursAi/NatursAi_react_app# ^C
+root@DaveServer:/home/NatursAi/NatursAi_react_app# cd
+root@DaveServer:~# cd /home
+root@DaveServer:/home# cd NatursAi
+root@DaveServer:/home/NatursAi# cd NatursAi_react_app
+root@DaveServer:/home/NatursAi/NatursAi_react_app# npm start
+-bash: /usr/bin/npm: No such file or directory
+root@DaveServer:/home/NatursAi/NatursAi_react_app# npm start
+-bash: /usr/bin/npm: No such file or directory
+root@DaveServer:/home/NatursAi/NatursAi_react_app#
 
 ## Available Scripts
 
