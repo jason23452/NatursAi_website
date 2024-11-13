@@ -33,7 +33,7 @@ function My_header() {
 
 
     return (
-        <div className=" flex items-center h-[3.9583vw] bg-transparent  z-10 relative w-full ">
+        <div className=" flex items-center h-[3.9583vw] bg-transparent  z-10 relative w-full  ">
             {/* <img className=' absolute  top-0 opacity-20' src={test_header}/> */}
             <div className='flex items-center ml-[1.6146vw] w-[39.6875vw] h-[2.917vw]  space-x-[1.6667vw] '>
                 <Link to='/'><HoverImage className='header_logo' defaultSrc={Logo} hoverSrc={Logo_black} /></Link>
@@ -69,9 +69,8 @@ function My_header() {
                     <Link to='/profile'> <LazyImage className='w-[2.0833vw] h-[2.0833vw] rounded-full  hover:scale-110 transition-transform duration-200' src={user_circle} />  </Link>
                 </div>
             </div>
-
-
         </div>
+        
     );
 }
 

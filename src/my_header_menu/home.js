@@ -28,7 +28,7 @@ function Home() {
 
 
     return (
-        <div className="h-[108.6459vw] relative w-full">
+        <div className="h-[108.6459vw] relative w-full ">
             <div className='absolute w-full h-[108.6459vw] -top-[3.9583vw]'>
                 <img src={home_bg} className="w-full   object-cover" alt="Login Background" />
                 {/* <img src={test} className=' absolute top-0 opacity-60' /> */}

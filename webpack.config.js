@@ -2,11 +2,13 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = (env) => {
-  const isDevelopment = env.mode === 'production';
+  const isDevelopment = env.mode === 'development';
+  // const isDevelopment = env.mode === 'production';
 
   return {
     mode: env.mode,
@@ -72,24 +74,56 @@ module.exports = (env) => {
     },
     devServer: {
       static: path.join(__dirname, 'dist'),
+      allowedHosts: 'all', // 允许所有 Host 访问
       port: 3000,
       open: true,
       hot: true,
       historyApiFallback: true, // React SPA 路由支持
     },
     plugins: [
-      new BundleAnalyzerPlugin({
-        analyzerMode: 'static', // 设置为 'static' 生成 HTML 文件
-        reportFilename: 'bundle-report.html', // 定义生成的报告文件名称
-        openAnalyzer: true, // 自动打开生成的报告文件
-        generateStatsFile: false, // 不需要生成 stats.json 文件
-      }),
+      // new BundleAnalyzerPlugin({
+      //   analyzerMode: 'static', // 设置为 'static' 生成 HTML 文件
+      //   reportFilename: 'bundle-report.html', // 定义生成的报告文件名称
+      //   openAnalyzer: true, // 自动打开生成的报告文件
+      //   generateStatsFile: false, // 不需要生成 stats.json 文件
+      // }),
+      // new FaviconsWebpackPlugin({
+      //   logo: './public/images/logo.png', // 指定你的 512x512 PNG 图标路径
+      //   inject: true, // 自动注入到 HTML 文件
+      //   favicons: {
+      //     appName: 'NatursAi',
+      //     appDescription: 'abc好棒棒!',
+      //     developerName: 'Your Name',
+      //     developerURL: null, // 开发者链接
+      //     background: '#ffffff', // 启动画面背景色
+      //     theme_color: '#000000', // 浏览器主题颜色
+      //     icons: {
+      //       android: true, // Android 图标
+      //       appleIcon: true, // Apple Touch 图标
+      //       favicons: true, // 浏览器 favicon
+      //       appleStartup: true, // Apple 启动画面图标
+      //       windows: true, // Windows 磁贴图标
+      //       yandex: false, // 不生成 Yandex 图标
+      //     },
+      //   },
+      // }),
+
 
 
       new HtmlWebpackPlugin({
         template: './public/index.html', // 自定义模板
-        inject: true, // 自动注入所有打包后的资源
+        favicon:'./public/images/logo512x512.png',
+        
+        inject: true, 
       }),
+      new CopyWebpackPlugin({
+        patterns: [
+          { from: './public/manifest.json', to: 'manifest.json' }, // 複製 manifest.json
+          { from: './public/images', to: 'images' }, // 複製圖片資料夾
+        ],
+      }),
+
+      
       ...(isDevelopment
         ? []
         : [
@@ -100,7 +134,7 @@ module.exports = (env) => {
             minRatio: 0.8,
           }),
           new MiniCssExtractPlugin({
-            filename: 'styles/[name].[contenthash].css',
+            filename:'output.css',
           }),
         ]),
     ],

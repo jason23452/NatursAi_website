@@ -23,6 +23,8 @@ module.exports = {
         'c3c3c3' : '#c3c3c3',
         'fdfdfd' : '#fdfdfd',
 
+
+        
       },
 
       fontSize:{

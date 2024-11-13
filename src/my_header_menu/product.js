@@ -69,7 +69,6 @@ const CustomProgressBar = ({ progress, onProgressChange }) => {
 
 
 function Product() {
-    const [isHovered, setIsHovered] = useState(false);
     const images = [baby1, baby2, baby3]; // 圖片列表
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -163,7 +162,6 @@ function Product() {
             <div className="absolute w-full h-[221.0417vw] -top-[3.9583vw]">
                 <img src={Product_bg} className="w-full object-cover" alt="Login Background" />
                 {/* <img src={Product_test} className=" absolute  top-0 " alt="Login Background" /> */}
-
             </div>
 
             {/* Content */}
