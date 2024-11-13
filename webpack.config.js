@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
@@ -14,11 +15,29 @@ module.exports = (env) => {
     mode: env.mode,
     entry: './src/index.js', // React 项目入口
     output: {
-      filename: isDevelopment ? 'bundle.js' : 'bundle.[contenthash].js',
+      chunkFilename: isDevelopment
+        ? '[name].js'
+        : '[name].[contenthash].js', // 動態加載模塊文件名
+      filename: isDevelopment ? '[name].js' : '[name].[contenthash].js',
       path: path.resolve(__dirname, 'dist'),
-      publicPath: '/', // 设置为根路径
-      clean: true, // 每次构建清理 dist 文件夹
+      publicPath: '/',
+      clean: true,
     },
+    optimization: {
+      minimize: true, // 啟用壓縮
+      minimizer: [new TerserPlugin()], // 使用 TerserPlugin 壓縮
+      splitChunks: {
+        chunks: 'all', // 對所有代碼進行拆分
+        cacheGroups: {
+          vendors: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+          },
+        },
+      },
+    },
+
     resolve: {
       extensions: ['.js', '.jsx'], // 支持解析 JS 和 JSX 文件
       fallback: {
@@ -107,6 +126,7 @@ module.exports = (env) => {
       //     },
       //   },
       // }),
+      
 
 
 
