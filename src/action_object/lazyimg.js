@@ -9,12 +9,14 @@ import "react-lazy-load-image-component/src/effects/blur.css";
  * @param {string} className - Additional class names for styling
  * @returns Lazy loaded image
  */
-const LazyImage = ({ src, alt, className = "" }) => {
+const LazyImage = ({ src, alt, className = "" , onClick, ...props}) => {
   return (
     <LazyLoadImage
       className={className}
       src={src}
       alt={alt}
+      onClick={onClick} 
+      {...props}
     />
   );
 };

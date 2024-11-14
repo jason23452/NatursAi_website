@@ -1,4 +1,3 @@
-import '../css/headerCSS/header.css'
 import Logo from '../assets/header_img/Logo.svg';
 import Logo_black from '../assets/header_img/Logo_black.svg';
 import test_header from '../assets/header_img/header.png';
@@ -39,22 +38,24 @@ function My_header() {
                 <Link to='/'><HoverImage className='header_logo' defaultSrc={Logo} hoverSrc={Logo_black} /></Link>
 
                 <div className='h-[1.3542vw] w-[0.0521vw] bg-c3c3c3'></div>
-                
+
                 <Link to='/' className=' w-[3.1250vw] flex justify-center text-3F3F46  font-Noto_Sans_ch font-medium  text-20px    leading-20px  tracking-2px hover:text-538aa2  '>首頁</Link>
                 <Link to='/product' className='w-[3.1250vw] flex justify-center text-3F3F46   font-Noto_Sans_ch font-medium  text-20px     leading-20px tracking-2px  hover:text-538aa2  '>產品</Link>
-                <Link to='/Meal_planning'  className=' w-[5.2083vw] flex justify-center text-3F3F46   font-Noto_Sans_ch font-medium  text-20px     leading-20px tracking-2px  hover:text-538aa2 '>飲食規劃</Link>
+                <Link to='/Meal_planning' className=' w-[5.2083vw] flex justify-center text-3F3F46   font-Noto_Sans_ch font-medium  text-20px     leading-20px tracking-2px  hover:text-538aa2 '>飲食規劃</Link>
                 <Link to='/about' className=' w-[5.2083vw] flex justify-center text-3F3F46   font-Noto_Sans_ch font-medium  text-20px     leading-20px tracking-2px  hover:text-538aa2'>聯絡我們</Link>
                 <Link to='/Information' className='w-[3.1250vw] flex justify-center text-3F3F46   font-Noto_Sans_ch font-medium  text-20px     leading-20px tracking-2px  hover:text-538aa2 '>新聞</Link>
             </div>
 
 
             <div className='flex items-center  ml-auto  w-[29.8438vw] h-[2.8125vw]   bg-white   shadow-lg rounded-full '>
-                <HoverImage className='ml-[1.4062vw] w-[0.9375vw] h-[0.9375vw]' hoverSrc={translate_green} defaultSrc={translate}   />
+                <HoverImage className='ml-[1.4062vw] w-[0.9375vw] h-[0.9375vw]' hoverSrc={translate_green} defaultSrc={translate} />
                 <div className='ml-[1.9792vw] w-[24.3750vw] h-[2.0833vw] flex  space-x-[1.4062vw] items-center'>
-                    <div className='w-[4.3750vw] h-[1.2500vw] flex  items-center space-x-[0.5208vw] ' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                        <Link to='/login'><LazyImage className='w-[1.2500vw] h-[1.2500vw] ' src={isHovered ? identification_green : identification} /></Link>
-                        <Link to='/login' className={` text-start font-Noto_Sans_ch text-20px  leading-20px ${isHovered ? 'text-538aa2' : 'text-3F3F46 '}`}>登入</Link>
-                    </div>
+                    <Link to="/login" className="block">
+                        <div className='w-[4.3750vw] h-[1.2500vw] flex items-center space-x-[0.5208vw]' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+                            <LazyImage className='w-[1.2500vw] h-[1.2500vw]' src={isHovered ? identification_green : identification} />
+                            <span className={`text-start font-Noto_Sans_ch text-20px leading-20px ${isHovered ? 'text-538aa2' : 'text-3F3F46 '}`}>登入</span>
+                        </div>
+                    </Link>
 
                     <div className=' w-[8.3854vw] h-[1.6667vw] flex items-center bg-fdfdfd/50 shadow-lg rounded-full '>
                         <LazyImage className='w-[1.6667vw] h-[1.5625vw]' src={coin} />
@@ -70,7 +71,7 @@ function My_header() {
                 </div>
             </div>
         </div>
-        
+
     );
 }
 

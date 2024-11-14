@@ -39,14 +39,14 @@ function Login() {
     return (
         <div className=" relative h-[56.2500vw] w-full">
             {/* 背景图片 */}
-            <div className='absolute w-full h-[56.2500vw] -top-[3.9583vw]'>
-                <img src={login_bg} className="w-full object-cover" alt="Login Background" />
+            <div className='absolute w-full h-[60.2083vw] -top-[3.9583vw]'>
+                <img src={login_bg} className="w-full h-full  object-cover" alt="Login Background" />
                 {/* <img src={test} className=" absolute opacity-85 top-[162px]  left-[255px]" alt="Login Background" /> */}
                 {/* <img src={test2} className=" absolute opacity-85 top-[162px]  left-[255px]" alt="Login Background" /> */}
             </div>
 
             {/* 内容容器 */}
-            <div className={`absolute inset-0 ${fadeClass} `}>
+            <div className={`absolute inset-0  ${fadeClass}`}>
                 {!showRegister ? (
                     <LoginForm
                         switchToRegister={switchToRegister}
@@ -111,7 +111,7 @@ function LoginForm({ switchToRegister, isPasswordVisible, setPasswordVisible }) 
                                 alt="Toggle Visibility"
                             />
                         </div>
-                        <span className='ml-auto w-[4.844vw] h-[1.5096vw] text-center text-[#747474] font-Noto_Sans_ch font-normal leading-[1.172vw] text-[0.781vw] '>已經有帳號？</span>
+                        <span className='ml-auto w-[4.844vw] h-[1.5096vw] text-center text-[#747474] font-Noto_Sans_ch font-normal leading-[1.172vw] text-[0.781vw] '>沒有帳號嗎？</span>
                     </div>
                     <div className='w-full h-[6.2093vw]'>
                         <div className='bg-transparent w-full h-[1.8229vw]'></div>
@@ -119,7 +119,7 @@ function LoginForm({ switchToRegister, isPasswordVisible, setPasswordVisible }) 
                             <span className='w-[14.245vw] h-[1.7554vw] text-center text-white text-[1.250vw] font-normal font-Noto_Sans_ch leading-[1.508vw]'>登入</span>
                         </button>
                         <div className='flex w-[7.157vw] h-[1.8229vw] ml-[8.236vw] mt-[0.1547vw] items-center'>
-                            <span className='w-[5.024vw] h-full text-center text-[#747474] text-[0.781vw] font-normal font-inter leading-snug'>已經有帳號？</span>
+                            <span className='w-[5.024vw] h-full text-center text-[#747474] text-[0.781vw] font-normal font-inter leading-snug'>沒有帳號嗎？</span>
                             <span
                                 onClick={switchToRegister}
                                 className="w-[2.133vw] h-full text-center text-[#008566] text-[0.781vw] font-normal font-inter leading-snug cursor-pointer">
