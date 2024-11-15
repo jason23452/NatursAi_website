@@ -2404,57 +2404,200 @@ video {
 .duration-500 {
   transition-duration: 500ms;
 }
+
+
+
+
+
+
+
+
+ @font-face {
+    font-family: 'Baloo Thambi';
+    src: url(/fonts/BalooThambi-Regular.302c8fded5180ae001c5.ttf);
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    src: url(/fonts/NotoSansTC-Thin.d4710422714ef9b1beb6.ttf);
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    src: url(/fonts/NotoSansTC-ExtraLight.7e0c29a67ae9b589379d.ttf);
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    src: url(/fonts/NotoSansTC-Light.b0a6923f6bc8a1f4205e.ttf);
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    src: url(/fonts/NotoSansTC-Regular.17327da31a67ef481b01.ttf);
+    font-weight: 400;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    src: url(/fonts/NotoSansTC-Medium.066597a7d0203c0aed07.ttf);
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    src: url(/fonts/NotoSansTC-SemiBold.3e23d08e59ab89a73eec.ttf);
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    src: url(/fonts/NotoSansTC-Bold.8bce42ee6dedc26e6678.ttf);
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    src: url(/fonts/NotoSansTC-ExtraBold.c42f3884b769446970fe.ttf);
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans TC';
+    src: url(/fonts/NotoSansTC-Black.0bc9502404db6ecdde1a.ttf);
+    font-weight: 900;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url(/fonts/NotoSans-Thin.9b5afebb18111041e4cd.ttf);
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url(/fonts/NotoSans-ExtraLight.606a59e855381fae7daf.ttf);
+    font-weight: 200;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url(/fonts/NotoSans-Light.275a08f8fac914802a08.ttf);
+    font-weight: 300;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url(/fonts/NotoSans-Regular.f44eb06916865ba1d717.ttf);
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url(/fonts/NotoSans-Medium.7d6a1fe43154542889cb.ttf);
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url(/fonts/NotoSans-SemiBold.3eaa7cc524f610f41652.ttf);
+    font-weight: 600;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Noto Sans';
+    src: url(/fonts/NotoSans-Bold.9613a364b1c8eaca0650.ttf);
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url(/fonts/NotoSans-ExtraBold.eb5db880e5e0bb56789b.ttf);
+    font-weight: 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url(/fonts/NotoSans-Black.7f98ff3c1532e82107f8.ttf);
+    font-weight: 900;
+    font-display: swap;
+}
+
 .placeholder\:text-\[\#CACACA\]::placeholder {
   --tw-text-opacity: 1;
   color: rgb(202 202 202 / var(--tw-text-opacity));
 }
+
 .focus-within\:text-gray-900:focus-within {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
+
 .hover\:scale-110:hover {
   --tw-scale-x: 1.1;
   --tw-scale-y: 1.1;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+
 .hover\:bg-bt_hover:hover {
   background-image: linear-gradient(to right, #3F3F46, #3F3F46);
 }
+
 .hover\:from-\[\#3F3F46\]:hover {
   --tw-gradient-from: #3F3F46 var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(63 63 70 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
+
 .hover\:to-\[\#3F3F46\]:hover {
   --tw-gradient-to: #3F3F46 var(--tw-gradient-to-position);
 }
+
 .hover\:text-538aa2:hover {
   --tw-text-opacity: 1;
   color: rgb(83 138 162 / var(--tw-text-opacity));
 }
+
 .focus\:border-b-\[0\.1042vw\]:focus {
   border-bottom-width: 0.1042vw;
 }
+
 .focus\:border-black:focus {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
+
 .focus\:border-gray-600:focus {
   --tw-border-opacity: 1;
   border-color: rgb(75 85 99 / var(--tw-border-opacity));
 }
+
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
-
-
-
-
-
-
-
-
 .fade-out {
     opacity: 0;
     visibility: hidden; /* Hides the element visually when fading out */

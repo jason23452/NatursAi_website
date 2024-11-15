@@ -89,52 +89,42 @@ module.exports = (env) => {
             filename: 'fonts/[name].[hash][ext]',
           },
         },
+        {
+          test: /\.gz$/,
+          type: 'asset/resource',
+          generator: {
+            filename: 'compressed/[name].[hash][ext]',
+          },
+        },
+
+        
       ],
     },
     devServer: {
       static: path.join(__dirname, 'dist'),
-      allowedHosts: 'all', // 允许所有 Host 访问
+      allowedHosts: 'all',
       port: 3000,
       open: true,
       hot: true,
-      historyApiFallback: true, // React SPA 路由支持
+      historyApiFallback: true,
+      compress: true, // 啟用壓縮
+      onBeforeSetupMiddleware: (devServer) => {
+        devServer.app.get('*.gz', (req, res, next) => {
+          res.set('Content-Encoding', 'gzip'); // 設置 gzip 壓縮標頭
+          res.set('Content-Type', 'application/javascript'); // 根據文件類型設置正確的 MIME 類型
+          next();
+        });
+      },
     },
     plugins: [
-      // new BundleAnalyzerPlugin({
-      //   analyzerMode: 'static', // 设置为 'static' 生成 HTML 文件
-      //   reportFilename: 'bundle-report.html', // 定义生成的报告文件名称
-      //   openAnalyzer: true, // 自动打开生成的报告文件
-      //   generateStatsFile: false, // 不需要生成 stats.json 文件
-      // }),
-      // new FaviconsWebpackPlugin({
-      //   logo: './public/images/logo.png', // 指定你的 512x512 PNG 图标路径
-      //   inject: true, // 自动注入到 HTML 文件
-      //   favicons: {
-      //     appName: 'NatursAi',
-      //     appDescription: 'abc好棒棒!',
-      //     developerName: 'Your Name',
-      //     developerURL: null, // 开发者链接
-      //     background: '#ffffff', // 启动画面背景色
-      //     theme_color: '#000000', // 浏览器主题颜色
-      //     icons: {
-      //       android: true, // Android 图标
-      //       appleIcon: true, // Apple Touch 图标
-      //       favicons: true, // 浏览器 favicon
-      //       appleStartup: true, // Apple 启动画面图标
-      //       windows: true, // Windows 磁贴图标
-      //       yandex: false, // 不生成 Yandex 图标
-      //     },
-      //   },
-      // }),
-      
-
+    
 
 
       new HtmlWebpackPlugin({
         template: './public/index.html', // 自定义模板
-        favicon:'./public/images/logo512x512.png',
-        
-        inject: true, 
+        favicon: './public/images/logo512x512.png',
+
+        inject: true,
       }),
       new CopyWebpackPlugin({
         patterns: [
@@ -142,22 +132,29 @@ module.exports = (env) => {
           { from: './public/images', to: 'images' }, // 複製圖片資料夾
         ],
       }),
-
       
+
+
       ...(isDevelopment
         ? []
         : [
           new CompressionPlugin({
             algorithm: 'gzip',
-            test: /\.(js|css|html|svg)$/,
+            test: /\.(js|css|html|svg|ttf|mp4)$/,
             threshold: 10240,
             minRatio: 0.8,
+            filename: '[path][base].gz', // 壓縮後的文件名稱，保留同目錄結構
           }),
           new MiniCssExtractPlugin({
-            filename:'output.css',
+            filename: 'output.css',
           }),
         ]),
+        
+
     ],
+    resolve: {
+      extensions: ['.js', '.jsx', '.gz'], // 添加 .gz 作為可解析的擴展名
+    },
     performance: {
       maxAssetSize: 100000,
       maxEntrypointSize: 400000,
