@@ -27,6 +27,11 @@
       "src": "/images/logo16x16.png",
       "sizes": "16x16",
       "type": "image/png"
+    },
+    {
+      "src": "/images/logo1200x630.png",
+      "sizes": "1200x630",
+      "type": "image/png"
     }
   ],
   "screenshots": [
