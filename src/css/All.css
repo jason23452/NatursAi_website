@@ -4,9 +4,10 @@
 
 
 
+.conta{
 
-
-
+    @apply text-xs;
+}
 
 
  @font-face {
