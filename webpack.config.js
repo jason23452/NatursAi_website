@@ -86,7 +86,7 @@ module.exports = (env) => {
           test: /\.(woff|woff2|eot|ttf|otf)$/i,
           type: 'asset/resource',
           generator: {
-            filename: 'fonts/[name].[hash][ext]',
+            filename: 'fonts/[name][ext]',
           },
         },
         {
@@ -110,8 +110,16 @@ module.exports = (env) => {
       compress: true, // 啟用壓縮
       onBeforeSetupMiddleware: (devServer) => {
         devServer.app.get('*.gz', (req, res, next) => {
-          res.set('Content-Encoding', 'gzip'); // 設置 gzip 壓縮標頭
-          res.set('Content-Type', 'application/javascript'); // 根據文件類型設置正確的 MIME 類型
+          const fileType = req.path.split('.').slice(-2, -1)[0]; // 提取文件類型
+          const mimeTypes = {
+            js: 'application/javascript',
+            css: 'text/css',
+            html: 'text/html',
+            svg: 'image/svg+xml',
+            ttf: 'font/ttf',
+          };
+          res.set('Content-Encoding', 'gzip');
+          res.set('Content-Type', mimeTypes[fileType] || 'application/octet-stream'); // 默認二進制文件
           next();
         });
       },
@@ -140,7 +148,7 @@ module.exports = (env) => {
         : [
           new CompressionPlugin({
             algorithm: 'gzip',
-            test: /\.(js|css|html|svg|ttf|mp4)$/,
+            test: /\.(js|css|html|svg|ttf|mp4|woff2)$/,
             threshold: 10240,
             minRatio: 0.8,
             filename: '[path][base].gz', // 壓縮後的文件名稱，保留同目錄結構
