@@ -21,8 +21,8 @@ module.exports = {
       },
       backgroundColor:{
         'c3c3c3' : '#c3c3c3',
-        'fdfdfd' : '#fdfdfd',
-
+        'fdfdfd' : '#fdfdfd', 
+        
 
         
       },

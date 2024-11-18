@@ -117,6 +117,10 @@ module.exports = (env) => {
             html: 'text/html',
             svg: 'image/svg+xml',
             ttf: 'font/ttf',
+            mp4: 'video/mp4',
+            webm: 'video/webm',
+            woff2: 'font/woff2',
+            json: 'application/json',
           };
           res.set('Content-Encoding', 'gzip');
           res.set('Content-Type', mimeTypes[fileType] || 'application/octet-stream'); // 默認二進制文件
