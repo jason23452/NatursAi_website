@@ -16,6 +16,11 @@ import Function_1 from '../assets/product_img/Function_1.svg';
 import Function_2 from '../assets/product_img/Function_2.svg';
 import Function_3 from '../assets/product_img/Function_3.svg';
 
+
+import media_Function_1 from '../assets/product_img/media_Function_1.svg';
+import media_Function_2 from '../assets/product_img/media_Function_2.svg';
+import media_Function_3 from '../assets/product_img/media_Function_3.svg';
+
 import Function_1_black from '../assets/product_img/Function_1_black.svg';
 import Function_2_black from '../assets/product_img/Function_2_black.svg';
 import Function_3_black from '../assets/product_img/Function_3_black.svg';
@@ -65,6 +70,73 @@ const CustomProgressBar = ({ progress, onProgressChange }) => {
 };
 
 
+
+
+const Carousel = () => {
+    const images = [
+      { id: 1, src: media_Function_1 },
+      { id: 2, src: media_Function_2 },
+      { id: 3, src: media_Function_3 },
+    ];
+  
+    const [currentIndex, setCurrentIndex] = useState(0);
+  
+    const handleNext = () => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    };
+  
+    const handlePrev = () => {
+      setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+    };
+  
+    // 获取当前页面的两张图片
+    const getCurrentImages = () => {
+      const firstImage = images[currentIndex];
+      const secondImage = images[(currentIndex + 1) % images.length];
+      return [firstImage, secondImage];
+    };
+  
+    return (
+      <div className="mt-[7.4316vw] relative w-[99.7392vw] h-[66.1017vw]">
+        {/* Carousel Container */}
+        <div className="flex overflow-hidden">
+          <div
+            className="flex transition-transform duration-500 ease-in-out space-x-[3.9113vw] ml-[3.9113vw]"
+            
+          >
+            {/* 每页显示两张图片 */}
+            {getCurrentImages().map((image) => (
+              <div
+                key={image.id}
+                className="flex-shrink-0 w-[44.3286vw] h-[66.1017vw] flex items-center justify-center"
+              >
+                
+                <img
+                  src={image.src}
+                  alt={`Image ${image.id}`}
+                  className="w-full h-full object-fill"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+  
+        {/* Navigation Buttons */}
+        <button
+          onClick={handlePrev}
+          className="absolute top-1/2 left-4 transform -translate-y-1/2 w-[10.0847vw] h-[4.2164vw] "
+        >
+          <img className='w-full h-full' src={arrow_left}/>
+        </button>
+        <button
+          onClick={handleNext}
+          className="absolute top-1/2 right-4 transform -translate-y-1/2 w-[10.0847vw] h-[4.2164vw]"
+        >
+          <img className='w-full h-full' src={arrow_right}/>
+        </button>
+      </div>
+    );
+  };
 
 
 
@@ -368,9 +440,24 @@ function Product() {
                                 </div>
                             </div>
                         </div>
-                       
-
-
+                    </div>
+                    <div className=' relative mt-[18.3963vw] w-[79.2699vw] h-[27.3351vw] flex flex-col justify-between items-center  '>
+                        <span className='w-[52.0209vw] h-[9.7784vw] text-538aa2  text-[4.1721vw] font-Noto_Sans  font-bold leading-[5.0326vw] tracking-[0.8344vw] flex justify-center items-center'>聯絡我們</span>
+                        <span className=' absolute top-[8.3442vw] w-[79.2699vw] h-[12.2555vw] text-3F3F46 text-[1.9557vw] font-Noto_Sans font-black leading-[2.9335vw] tracking-[0.3911vw] flex justify-center items-center'>邀請您一同全民參與打造全面性健康管理，一起激勵更多注視健康的朋友更好地管理自己的健康和營養，實現個性化的飲食計畫和健康目標。</span>
+                        <button className='mt-[0.6245vw] w-[27.3181vw]   h-[6.0847vw] rounded-[6.5189vw] bg-[#538AA2] flex justify-center items-center text-[2.6076vw] text-white font-black  font-Noto_Sans leading-[3.1460vw] tracking-[0.5215vw]'>前往</button>
+                    </div>
+                    <span className='mt-[22.2086vw] w-[81.2256vw] h-[9.9087vw] text-538aa2 text-[6.2581vw] font-Noto_Sans leading-[7.5502vw] tracking-[0.9387vw] font-bold flex justify-center items-center '>系統核心
+                        <span className='text-3F3F46 text-[6.2581vw] font-Noto_Sans leading-[7.5502vw] tracking-[0.9387vw] font-bold '>三功能</span>
+                    </span>
+                    <span className='mt-[4.5632vw] w-[88.0052vw] h-[9.2568vw] text-399983 text-[4.1721vw] font-Noto_Sans  font-normal  leading-[5.0326vw] tracking-[0.6258vw] text-center'>我們將提供用最優質的APP，具備人性化且極具整合力的設計!</span>
+                    <Carousel/>
+                    <div className='mt-[30.8996vw] w-[66.3898vw] h-[72.6206vw]  flex flex-col'>
+                        <img className='ml-[6.6584vw] w-[33.5306vw] h-[19.8709vw]' src={Goeat_logo}/>
+                        <button className='mt-[17.1917vw] w-full h-[16.5971vw] bg-gradient-to-r from-[#83bbae] to-[#538aa2] rounded-[3.6506vw] flex items-center justify-center text-white text-[6.2581vw] font-Noto_Sans font-medium leading-[7.5502vw] '>盡情期待</button>
+                        <div className='mt-[9.9648vw] flex justify-between items-center '>
+                            <img className='w-[28.9439vw] h-[8.9961vw]' src={download_google}/>
+                            <img className='w-[28.9439vw] h-[8.9961vw]' src={download_apple}/>
+                        </div>
                     </div>
 
                 </div>
