@@ -5,29 +5,26 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-
 module.exports = (env) => {
   const isDevelopment = env.mode === 'development';
-  // const isDevelopment = env.mode === 'production';
 
   return {
     mode: env.mode,
-    entry: './src/index.js', // React 项目入口
+    entry: './src/index.js', // Entry point for React project
     output: {
       chunkFilename: isDevelopment
         ? '[name].js'
-        : '[name].[contenthash].js', // 動態加載模塊文件名
+        : '[name].[contenthash].js', // Dynamic module filenames
       filename: isDevelopment ? '[name].js' : '[name].[contenthash].js',
       path: path.resolve(__dirname, 'dist'),
       publicPath: '/',
       clean: true,
     },
     optimization: {
-      minimize: true, // 啟用壓縮
-      minimizer: [new TerserPlugin()], // 使用 TerserPlugin 壓縮
+      minimize: true, // Enable minimization
+      minimizer: [new TerserPlugin()],
       splitChunks: {
-        chunks: 'all', // 對所有代碼進行拆分
+        chunks: 'all', // Split all chunks
         cacheGroups: {
           vendors: {
             test: /[\\/]node_modules[\\/]/,
@@ -37,16 +34,15 @@ module.exports = (env) => {
         },
       },
     },
-
     resolve: {
-      extensions: ['.js', '.jsx'], // 支持解析 JS 和 JSX 文件
+      extensions: ['.js', '.jsx', '.gz'], // Supported extensions
       fallback: {
         stream: require.resolve('stream-browserify'),
       },
     },
     module: {
       rules: [
-        // 加载 CSS
+        // Load CSS with PostCSS and Tailwind CSS
         {
           test: /\.css$/,
           use: [
@@ -62,7 +58,7 @@ module.exports = (env) => {
             },
           ],
         },
-        // 加载 JavaScript 和 JSX
+        // Transpile JavaScript and JSX
         {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
@@ -73,15 +69,15 @@ module.exports = (env) => {
             },
           },
         },
-        // 加载图片和多媒体
+        // Handle images and media
         {
-          test: /\.(png|jpe?g|gif|svg|mp4|webm|ogg)$/,
+          test: /\.(png|jpe?g|gif|svg|mp4|webm|ogg)$/i,
           type: 'asset/resource',
           generator: {
             filename: 'assets/[name].[hash][ext]',
           },
         },
-        // 加载字体
+        // Handle fonts
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/i,
           type: 'asset/resource',
@@ -89,6 +85,7 @@ module.exports = (env) => {
             filename: 'fonts/[name][ext]',
           },
         },
+        // Handle gzipped files
         {
           test: /\.gz$/,
           type: 'asset/resource',
@@ -96,8 +93,6 @@ module.exports = (env) => {
             filename: 'compressed/[name].[hash][ext]',
           },
         },
-
-        
       ],
     },
     devServer: {
@@ -107,10 +102,10 @@ module.exports = (env) => {
       open: true,
       hot: true,
       historyApiFallback: true,
-      compress: true, // 啟用壓縮
+      compress: true, // Enable compression
       onBeforeSetupMiddleware: (devServer) => {
         devServer.app.get('*.gz', (req, res, next) => {
-          const fileType = req.path.split('.').slice(-2, -1)[0]; // 提取文件類型
+          const fileType = req.path.split('.').slice(-2, -1)[0]; // Extract file type
           const mimeTypes = {
             js: 'application/javascript',
             css: 'text/css',
@@ -123,50 +118,41 @@ module.exports = (env) => {
             json: 'application/json',
           };
           res.set('Content-Encoding', 'gzip');
-          res.set('Content-Type', mimeTypes[fileType] || 'application/octet-stream'); // 默認二進制文件
+          res.set('Content-Type', mimeTypes[fileType] || 'application/octet-stream');
           next();
         });
       },
     },
     plugins: [
-    
-
-
+      // Generate HTML file with favicon
       new HtmlWebpackPlugin({
-        template: './public/index.html', // 自定义模板
+        template: './public/index.html',
         favicon: './public/images/logo512x512.png',
-
         inject: true,
       }),
+      // Copy assets
       new CopyWebpackPlugin({
         patterns: [
-          { from: './public/manifest.json', to: 'manifest.json' }, // 複製 manifest.json
-          { from: './public/images', to: 'images' }, // 複製圖片資料夾
+          { from: './public/manifest.json', to: 'manifest.json' },
+          { from: './public/images', to: 'images' },
         ],
       }),
-      
-
-
+      // Apply plugins for production
       ...(isDevelopment
         ? []
         : [
-          new CompressionPlugin({
-            algorithm: 'gzip',
-            test: /\.(js|css|html|svg|ttf|mp4|woff2)$/,
-            threshold: 10240,
-            minRatio: 0.8,
-            filename: '[path][base].gz', // 壓縮後的文件名稱，保留同目錄結構
-          }),
-          new MiniCssExtractPlugin({
-            filename: 'output.css',
-          }),
-        ]),
-        
-
+            new CompressionPlugin({
+              algorithm: 'gzip',
+              test: /\.(js|css|html|svg|ttf|mp4|woff2)$/i,
+              threshold: 10240,
+              minRatio: 0.8,
+              filename: '[path][base].gz',
+            }),
+            new MiniCssExtractPlugin({
+              filename: 'output.css',
+            }),
+          ]),
     ],
-    resolve: {
-      extensions: ['.js', '.jsx', '.gz'], // 添加 .gz 作為可解析的擴展名
-    },
     performance: {
       maxAssetSize: 100000,
       maxEntrypointSize: 400000,

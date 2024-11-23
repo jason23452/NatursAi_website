@@ -10,8 +10,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        Noto_Sans_en: ['Noto Sans', 'sans-serif'],
-        Noto_Sans_ch: ['Noto Sans TC', 'sans-serif'],
+        Noto_Sans: ['Noto Sans', 'Noto Sans TC', 'sans-serif'],
         Baloo_Thambi: ['Baloo Thambi', 'sans-serif'],
       },
       textColor:{
