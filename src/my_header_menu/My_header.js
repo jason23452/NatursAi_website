@@ -46,7 +46,7 @@ const MenuButton = () => {
     };
     const handleCloseMenu = () => {
         setIsMenuOpen(false);
-      };
+    };
 
 
     return (
@@ -84,10 +84,10 @@ const MenuButton = () => {
                         </Link>
                     </ul>
                     <div className='mx-auto mt-[14.4420vw] w-[69.8827vw] h-[6.5189vw] flex items-center  space-x-[2.8683vw] '>
-                        <button className='w-[4.3025vw] h-[4.3025vw]'><img className='w-full h-full' src={Youtube}/></button>
-                        <button className='w-[4.1721vw] h-[4.3025vw]'><img className='w-full h-full' src={Instagram}/></button>
-                        <button className='w-[4.3025vw] h-[4.3025vw]'><img className='w-full h-full' src={Facebook}/></button>
-                        <button className='w-[4.1721vw] h-[4.1721vw]'><img className='w-full h-full' src={chat_alt}/></button>
+                        <button className='w-[4.3025vw] h-[4.3025vw]'><img className='w-full h-full' src={Youtube} /></button>
+                        <button className='w-[4.1721vw] h-[4.3025vw]'><img className='w-full h-full' src={Instagram} /></button>
+                        <button className='w-[4.3025vw] h-[4.3025vw]'><img className='w-full h-full' src={Facebook} /></button>
+                        <button className='w-[4.1721vw] h-[4.1721vw]'><img className='w-full h-full' src={chat_alt} /></button>
                         <span className='w-[41.3299vw] h-[6.5189vw] font-Noto_Sans text-black text-[1.9557vw] font-bold  leading-[2.9335vw] tracking-[0.0978vw] flex justify-center items-center '>Email:
                             <span className='font-Noto_Sans text-black text-[1.9557vw]   leading-[2.9335vw] '>Naturs.ai.2024@gmail.com</span>
                         </span>
@@ -127,12 +127,12 @@ function My_header() {
                 <div className='flex items-center  ml-auto  w-[29.8438vw] h-[2.8125vw]   bg-white   shadow-lg rounded-full '>
                     <HoverImage className='ml-[1.4062vw] w-[0.9375vw] h-[0.9375vw]' hoverSrc={translate_green} defaultSrc={translate} />
                     <div className='ml-[1.9792vw] w-[24.3750vw] h-[2.0833vw] flex  space-x-[1.4062vw] items-center'>
-                        <Link to="/login" className="block">
-                            <div className='w-[4.3750vw] h-[1.2500vw] flex items-center space-x-[0.5208vw]' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-                                <LazyImage className='w-[1.2500vw] h-[1.2500vw]' src={isHovered ? identification_green : identification} />
-                                <span className={`text-start font-Noto_Sans text-20px leading-20px ${isHovered ? 'text-538aa2' : 'text-3F3F46 '}`}>登入</span>
-                            </div>
-                        </Link>
+                        {/* <Link to="/login" className="block"> */}
+                        <div className='w-[4.3750vw] h-[1.2500vw] flex items-center space-x-[0.5208vw]' onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+                            <LazyImage className='w-[1.2500vw] h-[1.2500vw]' src={isHovered ? identification_green : identification} />
+                            <span className={`text-start font-Noto_Sans text-20px leading-20px ${isHovered ? 'text-538aa2' : 'text-3F3F46 '}`}>登入</span>
+                        </div>
+                        {/* </Link> */}
 
                         <div className=' w-[8.3854vw] h-[1.6667vw] flex items-center bg-fdfdfd/50 shadow-lg rounded-full '>
                             <LazyImage className='w-[1.6667vw] h-[1.5625vw]' src={coin} />
@@ -144,7 +144,9 @@ function My_header() {
 
                         <HoverImage className='w-[1.2500vw] h-[1.2500vwh]' defaultSrc={chat_alt} hoverSrc={chat_alt_green} />
                         <HoverImage className='w-[1.2500vw] h-[1.2500vw]' defaultSrc={bell} hoverSrc={bell_green} />
-                        <Link to='/profile'> <LazyImage className='w-[2.0833vw] h-[2.0833vw] rounded-full  hover:scale-110 transition-transform duration-200' src={user_circle} />  </Link>
+                        {/* <Link to='/profile'> */}
+                            <LazyImage className='w-[2.0833vw] h-[2.0833vw] rounded-full  hover:scale-110 transition-transform duration-200' src={user_circle} />
+                        {/* </Link> */}
                     </div>
                 </div>
             </div>
@@ -158,7 +160,7 @@ function My_header() {
                 </div>
 
             </div>
-            
+
 
 
 

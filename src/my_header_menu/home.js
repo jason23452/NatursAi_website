@@ -17,6 +17,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import HoverImage from '../action_object/HoverImage'
 import LazyImage from '../action_object/lazyimg';
+import Footer from '../my_header_menu/footer';
 
 
 
@@ -116,7 +117,7 @@ function Home() {
 
 
     return (
-        <div className="h-[108.6459vw] relative w-full ">
+        <div className="md:h-[108.6459vw] h-[641.5906vw] relative w-full ">
 
             <div className='md:absolute md:w-full md:h-[108.6459vw] md:-top-[3.9583vw] hidden md:block'>
                 <img src={home_bg} className="w-full   object-cover" alt="Login Background" />
@@ -279,15 +280,15 @@ function Home() {
                         <span className=' ml-[2.1669vw] text-[3.1291vw]  text-3F3F46 font-Noto_Sans  font-normal leading-28.95px tracking-[0.4694vw]'>我同意接收來自 NatursAi 的信息分享。</span>
                     </div>
                     <span className='mt-[5.5567vw] w-[65.3194vw] h-[12.2555vw] text-3F3F46 text-[1.9557vw]  font-Noto_Sans  font-normal leading-[2.3598vw] tracking-[0.2934vw]'>您可以隨時取消訂閱這些通訊。欲了解如何取消訂閱、我們的隱私實踐以及我們如何承諾保護和尊重您的隱私，請參閱我們的
-                            <span className='text-538aa2 text-[1.9557vw]  font-Noto_Sans  font-normal leading-[2.3598vw] tracking-[0.2934vw]'>《
-                                <span className='text-538aa2 text-[1.9557vw]  font-Noto_Sans  font-normal leading-[2.3598vw] tracking-[0.2934vw]'><span className='underline decoration-[0.052vw]'>隱私政策</span>
-                                    <span className='text-538aa2 text-[1.9557vw]  font-Noto_Sans  font-normal leading-[2.3598vw] tracking-[0.2934vw]'>》
-                                        <span className='text-3F3F46 text-[1.9557vw]  font-Noto_Sans  font-normal leading-[2.3598vw] tracking-[0.2934vw]'><br /><br />點擊下方的「訂閱」按鈕，即表示您同意允許 <span className=' font-Noto_Sans '>NatursAi</span> 存儲並處理您提交的個人信息，以便為您提供所需的內容。
-                                        </span>
+                        <span className='text-538aa2 text-[1.9557vw]  font-Noto_Sans  font-normal leading-[2.3598vw] tracking-[0.2934vw]'>《
+                            <span className='text-538aa2 text-[1.9557vw]  font-Noto_Sans  font-normal leading-[2.3598vw] tracking-[0.2934vw]'><span className='underline decoration-[0.052vw]'>隱私政策</span>
+                                <span className='text-538aa2 text-[1.9557vw]  font-Noto_Sans  font-normal leading-[2.3598vw] tracking-[0.2934vw]'>》
+                                    <span className='text-3F3F46 text-[1.9557vw]  font-Noto_Sans  font-normal leading-[2.3598vw] tracking-[0.2934vw]'><br /><br />點擊下方的「訂閱」按鈕，即表示您同意允許 <span className=' font-Noto_Sans '>NatursAi</span> 存儲並處理您提交的個人信息，以便為您提供所需的內容。
                                     </span>
                                 </span>
                             </span>
                         </span>
+                    </span>
 
 
                 </div>
