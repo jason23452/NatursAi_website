@@ -74,69 +74,87 @@ const CustomProgressBar = ({ progress, onProgressChange }) => {
 
 const Carousel = () => {
     const images = [
-      { id: 1, src: media_Function_1 },
-      { id: 2, src: media_Function_2 },
-      { id: 3, src: media_Function_3 },
+      {
+        id: 1,
+        src: media_Function_1,
+        Text: "健康管理APP",
+      },
+      {
+        id: 2,
+        src: media_Function_2,
+        Text: "遊戲機制",
+       
+      },
+      {
+        id: 3,
+        src: media_Function_3,
+        Text: "專屬商城",
+        
+      },
     ];
   
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(0); // 当前显示的图片索引
   
+    // 下一页
     const handleNext = () => {
-      setCurrentIndex((prev) => (prev + 1) % images.length);
+      setCurrentIndex((prev) => (prev + 1) % images.length); // 循环到下一页
     };
   
+    // 上一页
     const handlePrev = () => {
-      setCurrentIndex((prev) => (prev - 1 + images.length) % images.length);
+      setCurrentIndex((prev) => (prev - 1 + images.length) % images.length); // 循环到上一页
     };
   
-    // 获取当前页面的两张图片
+    // 获取当前页需要显示的两张图片
     const getCurrentImages = () => {
-      const firstImage = images[currentIndex];
-      const secondImage = images[(currentIndex + 1) % images.length];
+      const firstImage = images[currentIndex]; // 当前图片
+      const secondImage = images[(currentIndex + 1) % images.length]; // 下一张图片
       return [firstImage, secondImage];
     };
   
     return (
-      <div className="mt-[7.4316vw] relative w-[99.7392vw] h-[66.1017vw]">
+      <div className="mt-[7.4316vw] relative w-full h-[66.1017vw] overflow-hidden flex flex-col items-center justify-center">
         {/* Carousel Container */}
-        <div className="flex overflow-hidden">
-          <div
-            className="flex transition-transform duration-500 ease-in-out space-x-[3.9113vw] ml-[3.9113vw]"
+        <div className="relative w-full h-full flex items-center justify-center">
+          {getCurrentImages().map((image, index) => (
+            <div
+              key={image.id}
+              className={`absolute transition-all duration-500 ease-in-out  rounded-xl  flex flex-col items-center ${
+                index === 0
+                  ? "w-[44.3286vw] left-[25%] transform -translate-x-1/2 scale-100 opacity-100 z-10"
+                  : "w-[44.3286vw] left-[75%] transform -translate-x-1/2 scale-100 opacity-100 z-10"
+              }`}
+            >
+              {/* Image */}
+              <img
+                src={image.src}
+                alt={`Image ${image.id}`}
+                className='w-[44.3286vw] h-[66.1017vw] object-contain'
+              />
+              
             
-          >
-            {/* 每页显示两张图片 */}
-            {getCurrentImages().map((image) => (
-              <div
-                key={image.id}
-                className="flex-shrink-0 w-[44.3286vw] h-[66.1017vw] flex items-center justify-center"
-              >
-                
-                <img
-                  src={image.src}
-                  alt={`Image ${image.id}`}
-                  className="w-full h-full object-fill"
-                />
-              </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
   
         {/* Navigation Buttons */}
         <button
           onClick={handlePrev}
-          className="absolute top-1/2 left-4 transform -translate-y-1/2 w-[10.0847vw] h-[4.2164vw] "
+          className="absolute top-1/2 left-4 transform -translate-y-1/2 w-[10.0847vw] h-[4.2164vw] z-10"
         >
-          <img className='w-full h-full' src={arrow_left}/>
+          <img className="w-[10.5606vw] h-[4.6362vw]" src={arrow_left} alt="Prev" />
         </button>
         <button
           onClick={handleNext}
-          className="absolute top-1/2 right-4 transform -translate-y-1/2 w-[10.0847vw] h-[4.2164vw]"
+          className="absolute top-1/2 right-4 transform -translate-y-1/2 w-[10.0847vw] h-[4.2164vw] z-10"
         >
-          <img className='w-full h-full' src={arrow_right}/>
+          <img className="w-[10.5606vw] h-[4.6362vw]" src={arrow_right} alt="Next" />
         </button>
       </div>
     );
   };
+  
+  
 
 
 
