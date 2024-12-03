@@ -40,31 +40,31 @@ const TaiwanHealthNewsComponent = () => {
   if (loading) return <p>Loading...</p>;
 
   // 如果出错或者超出使用次数，显示默认画面
-  if (error) {
-    return (
-      <li
-        className="md:w-[62.414vw] md:h-[16.877vw] flex items-center mx-auto md:space-x-[3.125vw] space-x-[3.7810vw] w-[70.6649vw] h-[21.0000vw] "
-      >
+  // if (error) {
+  //   return (
+  //     <li
+  //       className="md:w-[62.414vw] md:h-[16.877vw] flex items-center mx-auto md:space-x-[3.125vw] space-x-[3.7810vw] w-[70.6649vw] h-[21.0000vw] "
+  //     >
         
-          <a >
-            <img
-              src={erro_img}
-              className="md:w-[23.958vw] md:h-[13.489vw] w-[35.8540vw] h-[20.2647vw]"
-            />
-          </a>
-        <div className="flex flex-col md:w-[30.052vw] md:h-[15.000vw] w-[42.8944vw] h-[20.3390vw]">
-          <span className="text-black md:text-[1.250vw] text-[2.0860vw] font-sans font-bold md:leading-[1.562vw] leading-[3.6936vw]">
-            出現問題了
-            <br />
-          </span>
-          <span className="text-black md:text-[1.042vw] text-[1.5645vw] font-sans font-normal md:leading-[1.562vw] ">
-            <br />
-            今天沒出現新聞喔!
-          </span>
-        </div>
-      </li>
-    );
-  }
+  //         <a >
+  //           <img
+  //             src={erro_img}
+  //             className="md:w-[23.958vw] md:h-[13.489vw] w-[35.8540vw] h-[20.2647vw]"
+  //           />
+  //         </a>
+  //       <div className="flex flex-col md:w-[30.052vw] md:h-[15.000vw] w-[42.8944vw] h-[20.3390vw]">
+  //         <span className="text-black md:text-[1.250vw] text-[2.0860vw] font-sans font-bold md:leading-[1.562vw] leading-[3.6936vw]">
+  //           出現問題了
+  //           <br />
+  //         </span>
+  //         <span className="text-black md:text-[1.042vw] text-[1.5645vw] font-sans font-normal md:leading-[1.562vw] ">
+  //           <br />
+  //           今天沒出現新聞喔!
+  //         </span>
+  //       </div>
+  //     </li>
+  //   );
+  // }
 
   return (
     <div>

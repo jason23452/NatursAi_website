@@ -74,7 +74,7 @@ const Carousel = () => {
                                 className={`Image ${image.class}`}
                             // " mt-[6.5632vw]  object-contain relative z-10 rounded-xl"
                             />
-                            <button className=' absolute bottom-[7.6858vw] flex items-center justify-center  w-[35.6349vw] h-[8.4668vw]  bg-gradient-to-r from-[#399983] to-[#538aa2] rounded-[4.7849vw] text-white text-[3.1291vw] font-sans font-medium leading-[28.95px]'>
+                            <button className=' absolute bottom-[7.6858vw] flex items-center justify-center  w-[35.6349vw] h-[8.4668vw]  bg-gradient-to-r from-[#399983] to-[#538aa2] rounded-[4.7849vw] text-white text-[3.1291vw] font-Noto_Sans  font-medium leading-[28.95px]'>
                                 {image.Text}
                             </button>
                         </div>
@@ -238,16 +238,16 @@ function Home() {
 
                     <div className=' relative mt-[33.8983vw] w-[89.1786vw] h-[36.6362vw] flex flex-col items-center  '>
                         <img src={media_logo} className='  w-[67.5359vw] h-[24.9022vw] ' />
-                        <span className=' absolute top-[20.2086vw] w-[89.1786vw] h-[16.4276vw] text-538aa2 text-[6.2581vw] font-sans font-bold leading-[8.6362vw] tracking-[0.9387vw] flex justify-center items-center'>劃時代的AI健康管理</span>
+                        <span className=' absolute top-[20.2086vw] w-[89.1786vw] h-[16.4276vw] text-538aa2 text-[6.2581vw] font-Noto_Sans  font-bold leading-[8.6362vw] tracking-[0.9387vw] flex justify-center items-center'>劃時代的AI健康管理</span>
                     </div>
-                    <span className='mt-[72.2295vw] w-[81.2256vw] h-[9.9087vw] text-399983 text-[6.2581vw] font-sans font-bold leading-[7.5502vw] tracking-[0.9387vw]'>拒絕枯燥的健康管理工具</span>
-                    <span className=' w-[88.0052vw] h-[9.2568vw] text-538aa2 text-[4.1721vw] font-sans font-normal leading-[5.0326vw] tracking-[0.6258vw]'>是否有過被管理工具的繁瑣過程逼退呢？</span>
-                    <span className='mt-[13.8201vw] w-[84.3546vw] h-[18.7744vw] flex justify-start items-center text-white text-[4.6936vw] font-sans font-bold leading-[5.6623vw] tracking-[0.7040vw]'>專業人性化的設計</span>
+                    <span className='mt-[72.2295vw] w-[81.2256vw] h-[9.9087vw] text-399983 text-[6.2581vw] font-Noto_Sans  font-bold leading-[7.5502vw] tracking-[0.9387vw]'>拒絕枯燥的健康管理工具</span>
+                    <span className=' w-[88.0052vw] h-[9.2568vw] text-538aa2 text-[4.1721vw] font-Noto_Sans  font-normal leading-[5.0326vw] tracking-[0.6258vw]'>是否有過被管理工具的繁瑣過程逼退呢？</span>
+                    <span className='mt-[13.8201vw] w-[84.3546vw] h-[18.7744vw] flex justify-start items-center text-white text-[4.6936vw] font-Noto_Sans  font-bold leading-[5.6623vw] tracking-[0.7040vw]'>專業人性化的設計</span>
                     <Carousel />
-                    <span className='mt-[50.7171vw] w-[72.7510vw] h-[15.9778vw] flex items-center justify-center text-white text-[6.2581vw] font-sans font-bold leading-[7.5502vw] tracking-[0.9387vw]'>關於我們</span>
-                    <span className='mt-[7.2295vw] w-[78.8787vw] h-[36.2451vw] text-white text-[4.1721vw] font-sans font-normal leading-[5.0326vw] tracking-[0.6258vw]'>Natursai 致力協助客戶讓健康成為日常首要目標。<br /><br />我們不僅鼓勵用戶探索更健康的生活方式，更以創新思維引領時尚健康的未來潮流。健康是豐富有趣且充滿動力的人生泉源！</span>
+                    <span className='mt-[50.7171vw] w-[72.7510vw] h-[15.9778vw] flex items-center justify-center text-white text-[6.2581vw] font-Noto_Sans  font-bold leading-[7.5502vw] tracking-[0.9387vw]'>關於我們</span>
+                    <span className='mt-[7.2295vw] w-[78.8787vw] h-[36.2451vw] text-white text-[4.1721vw] font-Noto_Sans  font-normal leading-[5.0326vw] tracking-[0.6258vw]'>Natursai 致力協助客戶讓健康成為日常首要目標。<br /><br />我們不僅鼓勵用戶探索更健康的生活方式，更以創新思維引領時尚健康的未來潮流。健康是豐富有趣且充滿動力的人生泉源！</span>
 
-                    <button className='w-[35.6675vw] h-[8.4746vw] bg-white rounded-[4.7849vw] text-538aa2 text-[3.1291vw]  font-sans font-bold  leading-28.95px'>一同打造</button>
+                    <button className='w-[35.6675vw] h-[8.4746vw] bg-white rounded-[4.7849vw] text-538aa2 text-[3.1291vw]  font-Noto_Sans  font-bold  leading-28.95px'>一同打造</button>
                     <div className='mt-[24.7718vw] w-[73.7562vw] h-[29.6115vw] flex justify-between items-center'>
                         <div className='flex flex-col justify-between items-center w-[31.8853vw] h-[29.4016vw]'>
                             <img className='w-[19.3390vw] h-[17.9140vw]' src={NatursAi} />
@@ -258,16 +258,16 @@ function Home() {
                             <Link to='/product' className='w-[31.6167vw] h-[8.8657vw]'><HoverImage hoverSrc={deep_understand_green} defaultSrc={deep_understand} /></Link>
                         </div>
                     </div>
-                    <span className='mt-[48.0939vw] w-[78.2269vw] h-[19.6871vw] text-399983 text-[6.2581vw] font-sans font-bold leading-[8.6362vw] tracking-[0.9387vw] text-center '>專業首選<br />
-                        <span className='text-538aa2 text-[6.2581vw] font-sans font-bold leading-[8.6362vw] tracking-[0.9387vw]'>的健康管理團隊</span>
+                    <span className='mt-[48.0939vw] w-[78.2269vw] h-[19.6871vw] text-399983 text-[6.2581vw] font-Noto_Sans  font-bold leading-[8.6362vw] tracking-[0.9387vw] text-center '>專業首選<br />
+                        <span className='text-538aa2 text-[6.2581vw] font-Noto_Sans  font-bold leading-[8.6362vw] tracking-[0.9387vw]'>的健康管理團隊</span>
                     </span>
-                    <span className='mt-[6.6493vw] w-[69.4915vw] h-[10.5606vw] text-3F3F46 text-[3.1291vw] font-sans font-normal leading-[5.5385vw] tracking-[0.4694vw] text-center '>立即訂閱
+                    <span className='mt-[6.6493vw] w-[69.4915vw] h-[10.5606vw] text-3F3F46 text-[3.1291vw] font-Noto_Sans  font-normal leading-[5.5385vw] tracking-[0.4694vw] text-center '>立即訂閱
                         <span className='text-538aa2 text-[3.1291vw] font-Baloo_Thambi font-normal leading-[5.5385vw] tracking-[0.4694vw] '>Naturs</span>
                         <span className='text-399983 text-[3.1291vw] font-Baloo_Thambi font-normal leading-[5.5385vw] tracking-[0.4694vw] '>ai</span>電子報以了解我們所有產品和公告的最新資訊。
                     </span>
                     <div className=' relative mt-[6.6362vw] w-[87.5098vw] h-[10.6375vw] bg-white flex items-center border border-[#b3b3b3]  focus-within:border-black '>
-                        <input className='w-full h-full p-[2.6545vw] outline-none text-[2.6076vw] font-sans leading-[3.1460vw] tracking-[0.3911vw]' placeholder='電子信箱(Email)*' />
-                        <button className=' absolute   right-[2.7914vw] w-[23.7288vw] h-[7.3012vw] bg-gradient-to-r from-[#399983] to-[#538aa2] flex justify-center items-center text-white text-[2.6076vw] font-sans font-medium leading-24.13px'>訂閱</button>
+                        <input className='w-full h-full p-[2.6545vw] outline-none text-[2.6076vw] font-Noto_Sans  leading-[3.1460vw] tracking-[0.3911vw]' placeholder='電子信箱(Email)*' />
+                        <button className=' absolute   right-[2.7914vw] w-[23.7288vw] h-[7.3012vw] bg-gradient-to-r from-[#399983] to-[#538aa2] flex justify-center items-center text-white text-[2.6076vw] font-Noto_Sans  font-medium leading-24.13px'>訂閱</button>
                     </div>
                     <div className='mt-[8.1252vw] w-[76.6754vw] h-[6.3038vw] flex items-center'>
                         <input
